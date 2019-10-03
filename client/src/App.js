@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment} from 'react';
+import Login from './components/Login';
+import Register from './components/Register';
+import NoMatch from './components/NoMatch';
+import { Switch, Route } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
+import Navbar from './components/Navbar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Fragment>
+    <Navbar />
+    <Container>
+      <Switch>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
+        <Route component={NoMatch} />
+      </Switch>
+
+    </Container>
+
+  </Fragment>
+)
+
 
 export default App;
