@@ -1,6 +1,6 @@
 class Api::AboutsController < ApplicationController
   def index 
-    render json: Abouts.all
+    render json: About.all
   end
 
   def create 
