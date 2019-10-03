@@ -1,35 +1,35 @@
 class Api::AboutsController < ApplicationController
   def index 
-    render json: Content.all
+    render json: Abouts.all
   end
 
   def create 
-    @content = Content.new(content_params)
-    if @content.save
-      render json: @content
+    @about = About.new(about_params)
+    if @about.save
+      render json: @about
     else
-      render json: { errors: @content.errors }, status: :unprocessable_entity
+      render json: { errors: @about.errors }, status: :unprocessable_entity
     end
   end
 
   def update
-    @content = Content.find(params[:id])
-    if @content.update(content_params)
-      render json: @content
+    @about = About.find(params[:id])
+    if @about.update(about_params)
+      render json: @about
     else
-      render json: { errors: @content.errors }, status: :unprocessable_entity
+      render json: { errors: @about.errors }, status: :unprocessable_entity
     end
   end
 
   def destroy
-    Content.find(params[:id]).destroy
+    About.find(params[:id]).destroy
     render json: { message: 'content deleted' }
   end
 
   private
-    def crud_params
+    def about_params
       # {post: { title: 'food', body: 'yummy'}}
       # { post: {title: '', body: ''} }
-      params.require(:crud).permit(:title, :body)
+      params.require(:about).permit(:title, :content, :image)
     end
 end

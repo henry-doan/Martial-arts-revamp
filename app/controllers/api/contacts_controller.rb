@@ -27,10 +27,10 @@ end
   end
 
   private
-    def post_params
+    def contact_params
       # {post: { title: 'food', body: 'yummy'}}
       # { post: {title: '', body: ''} }
-      params.require(:contact).permit(:name, :email, :phone, :interest, :note)
+      params.require(:contact).permit(:name, :email, :phone, :interest, :notes)
       
     end
 end
