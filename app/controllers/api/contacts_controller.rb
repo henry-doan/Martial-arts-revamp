@@ -1,5 +1,5 @@
 class Api::ContactsController < ApplicationController
-end
+  def index
     render json: Contact.all
   end
 
@@ -28,9 +28,6 @@ end
 
   private
     def contact_params
-      # {post: { title: 'food', body: 'yummy'}}
-      # { post: {title: '', body: ''} }
-      params.require(:contact).permit(:name, :email, :phone, :interest, :notes)
-      
+      params.require(:contact).permit(:name, :email, :phone, :interest, :notes)   
     end
 end
