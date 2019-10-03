@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: MyString
+  start_time: MyString
+  end_date: MyString
+  end_time: MyString
+  title: MyString
+  description: MyText
+  slug_link: MyString
+  flyer: MyString
+  instructor: MyString
+
+two:
+  start_date: MyString
+  start_time: MyString
+  end_date: MyString
+  end_time: MyString
+  title: MyString
+  description: MyText
+  slug_link: MyString
+  flyer: MyString
+  instructor: MyString

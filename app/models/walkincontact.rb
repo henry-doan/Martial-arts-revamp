@@ -1,0 +1,2 @@
+class Walkincontact < ApplicationRecord
+end
