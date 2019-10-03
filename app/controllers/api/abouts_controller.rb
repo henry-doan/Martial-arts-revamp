@@ -28,8 +28,6 @@ class Api::AboutsController < ApplicationController
 
   private
     def about_params
-      # {post: { title: 'food', body: 'yummy'}}
-      # { post: {title: '', body: ''} }
       params.require(:about).permit(:title, :content, :image)
     end
 end
