@@ -6,11 +6,7 @@ const AboutContext = React.createContext();
 export const AboutConsumer = AboutContext.Consumer;
 
 class AboutProvider extends Component {
-  state = { abouts: [],
-    addItem: (incommingAbout) => this.addItem(incommingAbout),
-    updateAbout: (id, title, content) => this.updateAbout(id, title, content),
-    // deletefunction here
-  }
+  state = { abouts: [] }
 
   componentDidMount() {
     axios.get('/api/abouts')
@@ -39,7 +35,10 @@ class AboutProvider extends Component {
 
   render() {
     return (
-      <AboutContext.Provider value={this.state}>
+      <AboutContext.Provider value={{
+        ...this.state,
+        updateAbout: this.updateAbout,
+      }}>
         { this.props.children }
       </AboutContext.Provider>
     )
