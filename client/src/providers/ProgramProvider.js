@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const ProgramContext = React.createContext();
 
-export const ProgramContext = ProgramContext.Consumer;
+export const ProgramConsumer = ProgramContext.Consumer;
 
 class ProgramProvider extends Component {
   state = {programs: []};
