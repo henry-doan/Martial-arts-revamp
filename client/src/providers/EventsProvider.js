@@ -6,8 +6,7 @@ const EventContext = React.createContext();
 export const EventContext = EventContext.Consumer;
 
 class EventProvider extends Component {
-
-  state = {events: []};
+  state = { events: [] };
 
   componentDidMount(){
     axios.get('/api/events')
@@ -59,7 +58,12 @@ class EventProvider extends Component {
 
   render() {
     return (
-      <EventContext.Provider value={this.state}>
+      <EventContext.Provider value={{
+        ...this.state,
+        addEvent: this.addEvent,
+        updateEvent: this.updateEvent,
+        deleteEvent: this.deleteEvent
+      }}>
         {this.props.children}
       </EventContext.Provider>
     )
