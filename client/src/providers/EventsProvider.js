@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const EventContext = React.createContext();
 
-export const EventContext = EventContext.Consumer;
+export const EventConsumer = EventContext.Consumer;
 
 class EventProvider extends Component {
   state = { events: [] };
