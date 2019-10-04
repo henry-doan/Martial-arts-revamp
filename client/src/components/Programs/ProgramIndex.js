@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Show from "../Programs/Show";
+import Show from "../Programs/ProgramShow";
 
 const ProgramIndex = () => (
   <div>
