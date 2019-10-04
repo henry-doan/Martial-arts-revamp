@@ -10,6 +10,7 @@ import AboutProvider from './providers/AboutProvider';
 import EventProvider from './providers/EventProvider';
 import ProgramProvider from './providers/ProgramProvider';
 import InstructorProvider from './providers/InstructorProvider';
+import ContactProvider from './providers/ContactProvider';
 
 initMiddleware();
 
@@ -18,13 +19,15 @@ ReactDOM.render(
     <AboutProvider>
       <EventProvider>
         <ProgramProvider>
-          <InstructorProvider>
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-        </InstructorProvider>
-      </ProgramProvider>
-     </EventProvider>
+          <ContactProvider>
+            <InstructorProvider>
+              <BrowserRouter>
+                <App />
+              </BrowserRouter>
+            </InstructorProvider>
+          </ContactProvider>
+        </ProgramProvider>
+      </EventProvider>
     </AboutProvider>
   </AuthProvider>
   , document.getElementById('root'));
