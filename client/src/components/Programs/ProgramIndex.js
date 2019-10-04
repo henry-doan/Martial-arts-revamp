@@ -15,6 +15,7 @@ const ProgramIndex = () => (
 
 
 
-t.string :title
-t.text :description
-t.string :image
+// t.string :title
+// t.text :description
+// t.string :image
+export default ProgramIndex;
