@@ -18,8 +18,8 @@ class AboutProvider extends Component {
       })
   }
 
-  updateAbout = (id, title, content) => {
-    axios.put(`/api/abouts/${id}`, { title, content })
+  updateAbout = (id, about) => {
+    axios.put(`/api/abouts/${id}`, { about })
       .then( res => {
         const abouts = this.state.abouts.map( t => {
           if (t.id === id)
