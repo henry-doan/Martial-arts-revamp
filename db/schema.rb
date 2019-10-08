@@ -10,10 +10,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_024614) do
+ActiveRecord::Schema.define(version: 2019_10_03_011808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "interest"
+    t.string "notes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "start_date"
+    t.string "start_time"
+    t.string "end_date"
+    t.string "end_time"
+    t.string "title"
+    t.text "description"
+    t.string "slug_link"
+    t.string "flyer"
+    t.string "instructor"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "instructors", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "specialty"
+    t.string "years"
+    t.string "experience"
+    t.string "sm_facebook"
+    t.string "sm_linkedin"
+    t.string "sm_twitter"
+    t.string "sm_instagram"
+    t.string "sm_youtube"
+    t.text "bio"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "image"
+    t.boolean "featured_boolean"
+    t.string "gallery"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -43,6 +102,16 @@ ActiveRecord::Schema.define(version: 2019_10_02_024614) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
+  end
+
+  create_table "walkincontacts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "interest"
+    t.string "notes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
