@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import { Form } from 'semantic-ui-react';
 import { ContactConsumer } from '../../../providers/ContactProvider';
+
 class ContactForm extends Component {
- state = {
-   name: this.props.name,
-   content: this.props.content
- }
+ state = { name: "", email: "", phone: "", interest: "", message: "" }
+
  handleChange = (e, { name, value }) => this.setState({ [name]: value })
+
  handleSubmit = (e) => {
    e.preventDefault();
    const contact = { ...this.state }
-   this.props.updateContact(contact)
+   this.props.addContact(contact)
+   this.setState({ name: "", email: "", phone: "", interest: "", message: "" })
+   window.location.href = '/'
  }
+
  render() {
    const { name, email, phone, interest, message } = this.state;
    return (
@@ -56,6 +59,7 @@ class ContactForm extends Component {
    )
  }
 }
+
 const ConnectedContactForm = (props) => {
  return (
    <ContactConsumer>
@@ -64,12 +68,14 @@ const ConnectedContactForm = (props) => {
          { ...props }
          name={value.name}
          email={value.email}
-         phone={phone.value}
-         interest={interest.value}
-         message={message.value}
+         phone={value.phone}
+         interest={value.interest}
+         message={value.message}
+         addContact = {value.addContact}
        />
      )}
    </ContactConsumer>
  )
 }
+
 export default ConnectedContactForm;
