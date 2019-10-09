@@ -5,7 +5,7 @@ const ProgramContext = React.createContext();
 
 export const ProgramConsumer = ProgramContext.Consumer;
 
-export class ProgramProvider extends Component {
+class ProgramProvider extends Component {
 
   state = { programs: [] };
 
