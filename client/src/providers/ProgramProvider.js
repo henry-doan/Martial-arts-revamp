@@ -41,7 +41,7 @@ export class ProgramProvider extends React.Component {
     .then( res => {
       const programs = this.state.programs.map ( p => {
         if (p.id === id)
-        return res.data
+          return res.data
         return p
       })
       this.setState({programs})
