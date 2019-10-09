@@ -65,12 +65,16 @@ export class ProgramProvider extends React.Component {
 
   render() {
     return (
-      <ProgramContext.Provider value={this.state}>
+      <ProgramContext.Provider value={{
+        ...this.state,	
+        addProgram: this.addProgram,	
+        updateProgram: this.updateProgram,	
+        deleteProgram: this.deleteProgram	
+      }}>
         {this.props.children}
       </ProgramContext.Provider>
     )
   }
-
 }
 
 export default ProgramProvider;
