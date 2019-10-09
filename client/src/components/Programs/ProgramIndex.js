@@ -3,15 +3,8 @@ import ProgramShow from "../Programs/ProgramShow";
 import { ProgramConsumer } from '../../providers/ProgramProvider';
 import {Link} from 'react-router-dom';
 
-
-
-
-
 const ProgramIndex = ({programs, updateProgram, deleteProgram, addProgram, }) => (
-
-
   <ProgramConsumer>
-
     { value => (
         <>
           { value.programs.map(program =>
@@ -26,10 +19,6 @@ const ProgramIndex = ({programs, updateProgram, deleteProgram, addProgram, }) =>
         </>
       )}
   </ProgramConsumer>
-
-
 )
-
-
 
 export default ProgramIndex;
