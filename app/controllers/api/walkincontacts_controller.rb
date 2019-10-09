@@ -27,8 +27,8 @@ class Api::WalkincontactsController < ApplicationController
   end
 
   private
-    def event_params
-      # { event: {name: '', email: '', phone: '', interest: '', title: ''} }
-      params.require(:event).permit(:name, :email, :phone, :interest, :title)
+    def walkincontact_params
+      # { walkincontact: {start_date: '', start_time: '', end_date: '', end_time: '', title: '', description: '', flyer: '', instructor: ''} }
+      params.require(:walkincontact).permit(:name, :email, :phone, :interest, :notes)
     end
 end

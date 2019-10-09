@@ -7,7 +7,7 @@ import {BrowserRouter} from 'react-router-dom';
 import { AuthProvider } from './providers/AuthProvider';
 import { initMiddleware } from 'devise-axios';
 import AboutProvider from './providers/AboutProvider';
-import EventProvider from './providers/EventProvider';
+import EventProvider from './providers/EventsProvider';
 import ProgramProvider from './providers/ProgramProvider';
 import InstructorProvider from './providers/InstructorProvider';
 import ContactProvider from './providers/ContactProvider';

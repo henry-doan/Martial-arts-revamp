@@ -10,15 +10,36 @@ class Navbar extends React.Component {
 
     if (user) {
       return (
+        <>
+                <Menu.Menu position='left'>
+          <Link to='/dashboard'>
+            <Menu.Item
+              id='dashboard'
+              name='dashboard'
+              active={location.pathname === '/dashboard'}
+            />
+          </Link>
+        </Menu.Menu>
         <Menu.Menu position='right'>
           <Menu.Item
             name='logout'
             onClick={ () => handleLogout(this.props.history) }
           />
         </Menu.Menu>
+        </>
       )
     } else {
       return (
+        <>
+        <Menu.Menu position='left'>
+          <Link to='/dashboard'>
+            <Menu.Item
+              id='dashboard'
+              name='dashboard'
+              active={location.pathname === '/dashboard'}
+            />
+          </Link>
+        </Menu.Menu>
         <Menu.Menu position='right'>
           <Link to='/login'>
             <Menu.Item
@@ -35,6 +56,7 @@ class Navbar extends React.Component {
             />
           </Link>
         </Menu.Menu>
+        </>
       )
     }
   }
