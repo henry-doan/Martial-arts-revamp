@@ -59,12 +59,16 @@ export class EventProvider extends React.Component {
 
   render() {
     return (
-      <EventContext.Provider value={this.state}>
+      <EventContext.Provider value={{
+        ...this.state,	
+        addEvent: this.addEvent,	
+        updateEvent: this.updateEvent,	
+        deleteEvent: this.deleteEvent	
+      }}>
         {this.props.children}
       </EventContext.Provider>
     )
   }
-
 }
 
 export default EventProvider;
