@@ -36,40 +36,40 @@ class EventForm extends Component {
     const { start_date,start_time, end_date, end_time, title, description, slug_link, flyer, instructor} = this.state 
     return (
       <Form onSubmit={this.handleSubmit}>
-
+          <label>Start Date</label>
         <input 
           required
           type="date"
-          placeholder='Start Date'
-          label='start_date'
+          placeholder='03/18/2019'
+          label='Start date'
           name='start_date'
           value={start_date}
           onChange={this.handleChange}
         >
         </input>
-
+        <label>Start Time</label>
         <input 
           required
           type="time"
-          placeholder='Start Time'
-          label='start_time'
+          placeholder='3:30 PM'
+          label='Start Time'
           name='start_time'
           value={start_time}
           onChange={this.handleChange}
         >
        </input>
-
+       <label>End Date</label>
         <input 
           required
           type="date"
-          placeholder='End Date'
-          label='end_date'
+          placeholder='10/31/2019'
+          label='End date'
           name='end_date'
           value={end_date}
           onChange={this.handleChange}
         >
         </input>
-
+        <label>End Time</label>
         <input 
           required
           type="time"
@@ -85,7 +85,7 @@ class EventForm extends Component {
         <Form.Input 
           required
           placeholder='Title'
-          label='title'
+          label='Event Name'
           name='title'
           value={title}
           onChange={this.handleChange}
@@ -94,7 +94,7 @@ class EventForm extends Component {
         <Form.Input 
           required
           placeholder='Description'
-          label='description'
+          label='Event Details'
           name='description'
           value={description}
           onChange={this.handleChange}
@@ -102,8 +102,8 @@ class EventForm extends Component {
 
         <Form.Input 
           required
-          placeholder='Flyer Link'
-          label='flyer'
+          placeholder='http://...'
+          label='Flyer Link'
           name='flyer'
           value={flyer}
           onChange={this.handleChange}
@@ -112,7 +112,7 @@ class EventForm extends Component {
         <Form.Input 
           required
           placeholder='Led by Instructor Bernales'
-          label='instructor'
+          label='Instructor'
           name='instructor'
           value={instructor}
           onChange={this.handleChange}
@@ -121,7 +121,7 @@ class EventForm extends Component {
         <Form.Input 
           required
           placeholder='bernalesinstitute.com/events/____'
-          label='slug_link'
+          label='Event link'
           name='slug_link'
           value={slug_link}
           onChange={this.handleChange}
