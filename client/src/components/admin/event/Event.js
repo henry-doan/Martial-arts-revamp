@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Segment, Button, Icon, Checkbox, Table } from 'semantic-ui-react';
 import EventForm from './EventForm';
-import EventConsumer from '../../../providers/EventsProvider'
+import EventConsumer from '../../../providers/EventProvider'
 import {Link} from 'react-router-dom'
 
 
@@ -109,7 +109,7 @@ class Event extends Component {
             primary
             size='small'
           >
-            <Icon name='calendar alternate outline' /> 
+            <Icon name='calendar alternate outline' />
             <Link to='/eventform'>Add Event</Link>Add Event
           </Button>
         </Table.HeaderCell>
