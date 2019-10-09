@@ -5,14 +5,9 @@ const ProgramContext = React.createContext();
 
 export const ProgramConsumer = ProgramContext.Consumer;
 
-export class ProgramProvider extends React.Component {
+export class ProgramProvider extends Component {
 
-  state = {programs: [],
-    addProgram: (incomingProgram) => this.addProgram(incomingProgram),
-    updateProgram:(id, program) => this.updateProgram(id, program),
-    deleteProgram:(id) => this.deleteProgram(id)
-
-  };
+  state = { programs: [] };
 
   componentDidMount(){
     axios.get('/api/programs')
@@ -61,7 +56,6 @@ export class ProgramProvider extends React.Component {
       console.log(err)
     })
   }
-
 
   render() {
     return (
