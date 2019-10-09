@@ -64,8 +64,6 @@ class ContactProvider extends Component {
         addContact: this.addContact,
         updateContact: this.updateAbout,
         deleteContact: this.deleteContact
-
-
       }}>
         { this.props.children }  
       </ContactContext.Provider>

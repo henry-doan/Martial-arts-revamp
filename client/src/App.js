@@ -11,6 +11,7 @@ import Dashboard from './components/admin/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProgramIndex from './components/Programs/ProgramIndex';
 import ConnectedProgramForm from './components/Programs/ProgramForm';
+import ConnectedContactForm from './components/admin/contact/ContactForm';
 
 const App = () => (
   <>
@@ -24,6 +25,7 @@ const App = () => (
         <Route exact path="/event" component={Event} />
         <Route exact path="/eventform" component={EventForm} />
         <Route exact path="/programForm" component={ConnectedProgramForm} />
+        <Route exact path="/contact" component={ConnectedContactForm} />
         <Route component={NoMatch} />
       </Switch>
     </Container>
