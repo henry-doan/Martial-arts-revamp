@@ -15,8 +15,9 @@ import Dashboard from './components/admin/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProgramIndex from './components/Programs/ProgramIndex';
 import ConnectedProgramForm from './components/Programs/ProgramForm';
-import ConnectedContactForm from './components/admin/Contact/ContactForm';
 import FetchUser from './components/FetchUser';
+import ConnectedContactForm from './components/admin/contact/ContactForm';
+import ConnectedWalkinForm from './components/admin/walkin/WalkinForm';
 
 const App = () => (
   <FetchUser>
@@ -39,6 +40,7 @@ const App = () => (
         <Route exact path="/instructor" component={Instructor} />
         <Route exact path="/instructorform" component={InstructorForm} />
 
+        <Route exact path="/walkin" component={ConnectedWalkinForm} />
         <Route component={NoMatch} />
       </Switch>
     </Container>
