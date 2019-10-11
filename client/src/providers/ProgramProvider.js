@@ -9,37 +9,44 @@ class ProgramProvider extends Component {
 
   state = { programs: [] };
 
-  componentDidMount(){
+  componentDidMount(history){
     axios.get('/api/programs')
     .then( res => {
       this.setState({ programs: res.data  })
+      history.push("/programindex")
+
     })
     .catch( err => {
       console.log(err)
     })
   }
 
-  addProgram = (incomingProgram) => {
+  addProgram = (incomingProgram, history) => {
     const program = incomingProgram
     axios.post('/api/programs', {program})
     .then(res => {
       const {programs} = this.state
       this.setState({programs: [ ...programs, res.data]})
+      history.push("/programindex")
     })
     .catch( err => {
       console.log(err)
     })
   }
 
-  updateProgram = (id, program) => {
-    axios.put(`/api/programs/${id}`, { program})
+  updateProgram = (id, program, history) => {
+    axios.put(`/api/programs/${id}`, { program })
     .then( res => {
       const programs = this.state.programs.map ( p => {
         if (p.id === id)
           return res.data
         return p
       })
-      this.setState({programs})
+      // debugger
+      this.setState({ programs }, () => {
+        history.push("/programindex");
+        // window.location.href = ''
+      });
     })
     .catch(err => {
       console.log(err)
@@ -60,10 +67,11 @@ class ProgramProvider extends Component {
   render() {
     return (
       <ProgramContext.Provider value={{
-        ...this.state,	
-        addProgram: this.addProgram,	
-        updateProgram: this.updateProgram,	
-        deleteProgram: this.deleteProgram	
+        ...this.state,
+        addProgram: this.addProgram,
+        updateProgram: this.updateProgram,
+        deleteProgram: this.deleteProgram,
+
       }}>
         {this.props.children}
       </ProgramContext.Provider>
