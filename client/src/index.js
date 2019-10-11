@@ -14,7 +14,6 @@ import ContactProvider from './providers/ContactProvider';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 
-
 initMiddleware();
 
 ReactDOM.render(
