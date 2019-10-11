@@ -1,20 +1,33 @@
-import React from 'react';
-import { Card } from 'semantic-ui-react';
-import { AboutConsumer } from '../../../providers/AboutProvider';
+import React, {useEffect, useContext, useState} from 'react';
+import { Header, Card } from 'semantic-ui-react';
+import { AboutContext } from '../../../providers/AboutProvider';
+import ConnectedAboutForm from './AboutForm';
 
-const About = () => (
-  <AboutConsumer>
-    { value => (
-      <Card>
-        <Card.Content>
-          <Card.Header>{ value.title }</Card.Header>
-          <Card.Meta>
-            Information: { value.content }
-          </Card.Meta>
-        </Card.Content>
-      </Card>
-    )}
-  </AboutConsumer>
-)
 
-export default Account;
+const About = () => {
+
+  const value = useContext(AboutContext);
+  const { title, content } = value.abouts[0] || {};
+
+  useEffect( () => {
+    value.getAbout()
+   },[]);
+
+   return(
+    <>
+      <Header>About Admin Page</Header>
+     <ConnectedAboutForm />
+        <Card>
+          <Card.Content>
+            <Card.Header> { title } </Card.Header>
+            <Card.Meta>
+              Information: { content }
+            </Card.Meta>
+          </Card.Content>
+        </Card>
+    </>
+   )
+
+}
+
+export default About;
