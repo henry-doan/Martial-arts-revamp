@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {InstructorConsumer} from '../../../providers/InstructorProvider';
 import { Form } from 'semantic-ui-react';
 
 class InstructorForm extends Component {
@@ -24,10 +25,11 @@ class InstructorForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.id) {
-      this.props.update(this.props.id, this.state)
+      this.props.updateInstructor(this.props.id, this.state)
       this.props.toggleEdit()
     } else {
-      this.props.add(this.state)
+      this.props.addInstructor(this.state)
+      this.props.history.push('/instructor');
     }
     this.setState({ first_name: '', last_name: '', specialty:'', years: '',
     experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '',})
@@ -127,6 +129,22 @@ class InstructorForm extends Component {
   }
 }
 
+const ConnectedInstructorForm = (props) => {
+  return (
+    <InstructorConsumer>
+      { value => (
+        <InstructorForm
+          { ...props }
+          {...value}
+
+          addInstructor={value.addInstructor}
+          updateInscrutor={value.updateInscrutor}
+        />
+      )}
+    </InstructorConsumer>
+  )
+}
+
 // const experienceOptions = [
 //     { key: "nb", text: "No Belt", value: "No Belt", },
 //     { key: "wb", text: "White Belt", value: "No Belt", },
@@ -147,4 +165,4 @@ class InstructorForm extends Component {
 //     { key: "blckb", text: "Black Belt", value: "No Belt", },
 // ];
 
-export default InstructorForm;
+export default ConnectedInstructorForm;

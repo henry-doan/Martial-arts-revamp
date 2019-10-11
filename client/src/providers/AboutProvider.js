@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const AboutContext = React.createContext();
+export const AboutContext = React.createContext();
 
 export const AboutConsumer = AboutContext.Consumer;
 
 class AboutProvider extends Component {
   state = { abouts: [] }
 
-  componentDidMount() {
+  getAbout = () => {
     axios.get('/api/abouts')
       .then( res => {
         this.setState({ abouts: res.data })
@@ -17,6 +17,20 @@ class AboutProvider extends Component {
          console.log(err)
       })
   }
+
+
+
+  addAbout = (about) => {
+    axios.post('/api/abouts', { about})
+    .then( res => {
+        const { abouts } = this.state
+        this.setState({ abouts: [ res.data ] })
+    })
+    .catch( err => {
+        console.log(err)
+    })
+}
+
 
   updateAbout = (id, about) => {
     axios.put(`/api/abouts/${id}`, { about })
@@ -36,7 +50,9 @@ class AboutProvider extends Component {
   render() {
     return (
       <AboutContext.Provider value={{
-        ...this.state,
+        abouts: this.state.abouts,
+        getAbout: this.getAbout,
+        addAbout: this.addAbout,
         updateAbout: this.updateAbout,
       }}>
         { this.props.children }

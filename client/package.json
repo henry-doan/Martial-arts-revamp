@@ -5,7 +5,9 @@
   "dependencies": {
     "axios": "^0.19.0",
     "devise-axios": "^1.0.24",
+    "moment": "^2.24.0",
     "react": "^16.10.1",
+    "react-big-calendar": "^0.22.1",
     "react-datepicker": "^2.9.6",
     "react-dom": "^16.10.1",
     "react-router-dom": "^5.1.2",

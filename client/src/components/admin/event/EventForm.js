@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Form } from 'semantic-ui-react';
+import {EventConsumer} from '../../../providers/EventProvider';
+import withRouter from 'react-router-dom';
 
 class EventForm extends Component {
   state = { start_date: '', start_time: '', end_date: '', end_time: '', 
@@ -22,10 +24,11 @@ class EventForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.id) {
-      this.props.update(this.props.id, this.state)
+      this.props.updateEvent(this.props.id, this.state)
       this.props.toggleEdit()
     } else {
-      this.props.add(this.state)
+      this.props.addEvent(this.state)
+      this.props.history.push('/event');
     }
     this.setState({ start_date: '', start_time: '', end_date: '', end_time: '', 
     title: '', description: '', slug_link: '', flyer: '', instructor: '' })
@@ -127,11 +130,29 @@ class EventForm extends Component {
           onChange={this.handleChange}
         />
 
-        <Form.Button color='green'>Submit</Form.Button>
+        <Form.Button 
+        color='green' 
+        >Submit
+        </Form.Button>
         
       </Form>
-    )
-  }
-}
 
-export default EventForm;
+
+)
+}
+}
+            const ConnectedEventForm = (props) => {
+                return (
+                  <EventConsumer>
+                    { value => (
+                      <EventForm
+                        { ...props }
+                        addEvent={value.addEvent}
+                        updateEvent={value.updateEvent}
+                      />
+                    )}
+                  </EventConsumer>
+                )
+              }
+
+export default ConnectedEventForm;
