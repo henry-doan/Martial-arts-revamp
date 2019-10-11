@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const InstructorContext = React.createContext();
-
+export const InstructorContext = React.createContext();
 export const InstructorConsumer = InstructorContext.Consumer;
 
 class InstructorProvider extends Component {
     state = { instructors: [] }
 
-    componentDidMount(){
+    getInstructor = () => {
         axios.get('/api/instructors')
         .then( res => {
             this.setState({ instructors: res.data })
@@ -17,6 +16,7 @@ class InstructorProvider extends Component {
             console.log(err)
         })
     }
+
 
 
 addInstructor = (instructor) => {
@@ -46,7 +46,7 @@ updateInstructor = (id, instructor) => {
   }
 
   deleteInstructor = (id) => {
-      axios.delete(`/api/instructor/${id}`)
+      axios.delete(`/api/instructors/${id}`)
       .then( res => {
           const { instructors } = this.state
           this.setState({ instructor: instructors.filter( i => i.id !== id) }) 
@@ -56,7 +56,8 @@ updateInstructor = (id, instructor) => {
 render() {
     return(
         <InstructorContext.Provider value={{
-            ...this.state,
+            instructors: this.state.instructors,
+            getInstructor: this.getInstructor,
             addInstructor: this.addInstructor,
             updateInstructor: this.updateInstructor,
             deleteInstructor: this.deleteInstructor

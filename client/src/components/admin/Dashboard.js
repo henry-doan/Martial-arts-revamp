@@ -1,7 +1,6 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
 import {Link} from 'react-router-dom'
-// import { AboutConsumer } from '../../../providers/AboutProvider';
 
 const Dashboard = () => (
     <>
@@ -17,6 +16,12 @@ const Dashboard = () => (
     </Menu.Item>
     <Menu.Item>
         <Link to='/about'>About</Link>
+    </Menu.Item>
+    <Menu.Item>
+        <Link to='/contact'>Contact</Link>
+    </Menu.Item>
+    <Menu.Item>
+        <Link to='/walkin'>Walkin</Link>
     </Menu.Item>
 </Menu>
 </>

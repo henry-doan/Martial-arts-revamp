@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-const EventContext = React.createContext();
-
+export const EventContext = React.createContext(); 
 export const EventConsumer = EventContext.Consumer;
 
 class EventProvider extends Component {
   state = { events: [] };
 
-  componentDidMount(){
+  getEvent = () => {
     axios.get('/api/events')
     .then( res => {
+      console.log("success")
       this.setState({ events: res.data})
     })
     .catch( err => {
+      console.log("fail")
       console.log(err)
     })
   }
@@ -59,7 +60,8 @@ class EventProvider extends Component {
   render() {
     return (
       <EventContext.Provider value={{
-        ...this.state,
+        events: this.state.events,
+        getEvent: this.getEvent,
         addEvent: this.addEvent,
         updateEvent: this.updateEvent,
         deleteEvent: this.deleteEvent
