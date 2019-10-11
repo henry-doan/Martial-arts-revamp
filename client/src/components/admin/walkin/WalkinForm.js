@@ -7,13 +7,17 @@ class WalkinForm extends Component {
 
  handleChange = (e, { name, value }) => this.setState({ [name]: value })
 
- handleSubmit = (e) => {
-   e.preventDefault();
-   const walkin = { ...this.state }
-   this.props.addWalkin(walkin)
-   this.setState({ name: "", email: "", phone: "", interest: "", message: "" })
-   window.location.href = '/'
+ componentDidMount() {
+   console.log(this.props)
  }
+
+ handleSubmit = (e) => {
+  e.preventDefault();
+  const walkin = { ...this.state }
+  this.props.addWalkin(walkin)
+  this.setState({ name: "", email: "", phone: "", interest: "", message: "" })
+  window.location.href = '/'
+}
 
  render() {
    const { name, email, phone, interest, message } = this.state;
@@ -66,12 +70,8 @@ const ConnectedWalkinForm = (props) => {
      { value => (
        <WalkinForm
          { ...props }
-         name={value.name}
-         email={value.email}
-         phone={value.phone}
-         interest={value.interest}
-         message={value.message}
-         addWalkin = {value.addWalkin}
+         { ...value }
+         
        />
      )}
    </WalkinConsumer>
