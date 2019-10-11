@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class ProgramShow extends Component {
   render(){
-    const { id, title, description, image, gallery, featured_boolean, updateProgram, deleteProgram } = this.props
+    const { id, title, description, image, gallery, featured_boolean, updateProgram, deleteProgram, history } = this.props
     return (
       <div>
         <h1>id: {id}<br />
@@ -11,7 +11,7 @@ class ProgramShow extends Component {
         Description: {description}<br />
         <Link to={{
           pathname: "/programForm",
-          state: { id, title, description, image, gallery, featured_boolean }
+          state: { id, title, description, image, gallery, featured_boolean, history }
         }}>Edit Program</Link>
         <button onClick = {() => deleteProgram(id)}>delete</button>
         </h1>

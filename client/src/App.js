@@ -11,7 +11,7 @@ import Dashboard from './components/admin/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProgramIndex from './components/Programs/ProgramIndex';
 import ConnectedProgramForm from './components/Programs/ProgramForm';
-import ConnectedContactForm from './components/admin/contact/ContactForm';
+import ConnectedContactForm from './components/admin/Contact/ContactForm';
 
 const App = () => (
   <>

@@ -16,7 +16,7 @@ class Api::ProgramsController < ApplicationController
     def update
         @program = Program.find(params[:id])
         if @program.update(program_params)
-            render json: @program_params
+            render json: @program
         else
             render json: {errors: @program.errors }, status: :unprocessable_entity
         end
@@ -28,8 +28,8 @@ class Api::ProgramsController < ApplicationController
     end
 
     private
-    def program_params
-    params.require(:program).permit(:title, :description, :image, :featured_boolean, :gallery )
-    end
+      def program_params
+        params.require(:program).permit(:title, :description, :image, :featured_boolean, :gallery )
+      end
 
 end
