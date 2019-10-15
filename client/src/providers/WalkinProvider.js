@@ -10,7 +10,7 @@ class WalkinProvider extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/walkins')
+    axios.get('/api/walkincontacts')
       .then( res => {
         this.setState({ walkins: res.data })
       })
@@ -21,7 +21,7 @@ class WalkinProvider extends Component {
 
   addWalkin = (incommingWalkin) => {
     const walkin = incommingWalkin
-    axios.post('/api/walkins', { walkin })
+    axios.post('/api/walkincontacts', { walkin })
       .then( res => {
         const { walkins } = this.state
         this.setState({ walkins: [ ...walkins, res.data ] })
@@ -32,7 +32,7 @@ class WalkinProvider extends Component {
   }
 
   updateWalkin = (id, walkin) => {
-    axios.put(`/api/walkins/${id}`, { walkin })
+    axios.put(`/api/walkincontacts/${id}`, { walkin })
       .then( res => {
         const walkins = this.state.walkins.map( t => {
           if (t.id === id)
@@ -47,7 +47,7 @@ class WalkinProvider extends Component {
   }
 
   deleteWalkin = (id) => {
-    axios.delete(`/api/walkins/${id}`)
+    axios.delete(`/api/walkincontacts/${id}`)
       .then( res => {
         const { walkins } = this.state
         this.setState({ walkins: walkins.filter( t => t.id !== id ) })

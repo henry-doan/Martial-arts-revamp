@@ -29,6 +29,6 @@ class Api::WalkincontactsController < ApplicationController
   private
     def walkincontact_params
       # { walkincontact: {start_date: '', start_time: '', end_date: '', end_time: '', title: '', description: '', flyer: '', instructor: ''} }
-      params.require(:walkincontact).permit(:name, :email, :phone, :interest, :notes)
+      params.require(:walkin).permit(:name, :email, :phone, :interest, :notes)
     end
 end
