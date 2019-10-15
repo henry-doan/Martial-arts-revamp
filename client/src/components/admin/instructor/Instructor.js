@@ -51,7 +51,7 @@ const Instructor = () => {
                         size='small'
                     >
                         <Icon name='user' /> 
-                        <Link to='/instructorform'>Add Instructor</Link>
+                        <Link to='/admin/instructorform'>Add Instructor</Link>
                     </Button>
                     </Table.HeaderCell>
                 </Table.Row>

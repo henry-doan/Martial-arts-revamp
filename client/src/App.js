@@ -13,8 +13,8 @@ import Instructor from './components/admin/instructor/Instructor';
 import InstructorForm from './components/admin/instructor/InstructorForm';
 import Dashboard from './components/admin/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
-import ProgramIndex from './components/Programs/ProgramIndex';
-import ConnectedProgramForm from './components/Programs/ProgramForm';
+import ProgramIndex from './components/admin/programs/ProgramIndex';
+import ConnectedProgramForm from './components/admin/programs/ProgramForm';
 import FetchUser from './components/FetchUser';
 import ConnectedContactForm from './components/admin/contact/ContactForm';
 import ConnectedWalkinForm from './components/admin/walkin/WalkinForm';
@@ -24,23 +24,23 @@ const App = () => (
     <Navbar />
     <Container>
       <Switch>
-        <Route exact path="/programindex" component={ProgramIndex} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/dashboard" component={Dashboard} />
 
-        <Route exact path="/event" component={Event} />
-        <Route exact path="/eventform" component={EventForm} />
-        <Route exact path="/programForm" component={ConnectedProgramForm} />
-        <Route exact path="/contact" component={ConnectedContactForm} />
+        <Route exact path="/admin/event" component={Event} />
+        <Route exact path="/admin/eventform" component={EventForm} />
+        <Route exact path="/admin/programForm" component={ConnectedProgramForm} />
+        <Route exact path="/admin/programindex" component={ProgramIndex} />
 
-        <Route exact path="/about" component={About} />
-        <Route exact path="/aboutform" component={AboutForm} />
+        <Route exact path="/admin/about" component={About} />
+        <Route exact path="/admin/aboutform" component={AboutForm} />
 
-        <Route exact path="/instructor" component={Instructor} />
-        <Route exact path="/instructorform" component={InstructorForm} />
+        <Route exact path="/admin/instructor" component={Instructor} />
+        <Route exact path="/admin/instructorform" component={InstructorForm} />
 
-        <Route exact path="/walkin" component={ConnectedWalkinForm} />
+        <Route exact path="/admin/contact" component={ConnectedContactForm} />
+        <Route exact path="/admin/walkin" component={ConnectedWalkinForm} />
         <Route component={NoMatch} />
       </Switch>
     </Container>

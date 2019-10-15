@@ -4,13 +4,13 @@ import { Form } from 'semantic-ui-react';
 
 class InstructorForm extends Component {
   state = { first_name: '', last_name: '', specialty:'', years: '',
-   experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '', 
+   experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '', image: '' 
 }
 
   componentDidMount() {
     if (this.props.id) {
       this.setState({ first_name: this.props.first_name, last_name: this.props.last_name, 
-        specialty: this.props.specialty, years: this.props.years, 
+        specialty: this.props.specialty, years: this.props.years, images: this.props.images, 
         experience: this.props.experience, sm_facebook: this.props.sm_facebook, 
         sm_linkedin: this.props.sm_linkedin, sm_instagram: this.props.sm_instagram, sm_youtube: this.props.sm_youtube, 
       })
@@ -29,14 +29,14 @@ class InstructorForm extends Component {
       this.props.toggleEdit()
     } else {
       this.props.addInstructor(this.state)
-      this.props.history.push('/instructor');
+      this.props.history.push('/admin/instructor');
     }
     this.setState({ first_name: '', last_name: '', specialty:'', years: '',
-    experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '',})
+    experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '', image: ''})
   }
 
   render() {
-    const { first_name, last_name, specialty, years, experience, sm_facebook, sm_linkedin, sm_instagram, sm_youtube} = this.state 
+    const { first_name, last_name, specialty, years,image, experience, sm_facebook, sm_linkedin, sm_instagram, sm_youtube} = this.state 
     return (
       <Form onSubmit={this.handleSubmit}>
 
@@ -64,6 +64,15 @@ class InstructorForm extends Component {
           label='specialty'
           name='specialty'
           value={specialty}
+          onChange={this.handleChange}
+        />
+
+        <Form.Input 
+          required
+          placeholder='Instructor Image'
+          label='image'
+          name='image'
+          value={image}
           onChange={this.handleChange}
         />
 

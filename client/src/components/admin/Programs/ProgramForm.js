@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Form, } from "semantic-ui-react";
-import { ProgramConsumer } from '../../providers/ProgramProvider';
+import { ProgramConsumer } from '../../../providers/ProgramProvider';
 
 
 
@@ -31,7 +31,7 @@ class ProgramForm extends React.Component {
      this.props.updateProgram(id, { ...this.state }, history)
    } else {
      this.props.addProgram(this.state)
-     history.push("/programindex")
+     history.push("/admin/programindex")
    }
    this.setState({ title: "", description: "", image:"", gallery:"" });
  };

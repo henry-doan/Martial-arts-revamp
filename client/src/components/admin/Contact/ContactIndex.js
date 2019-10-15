@@ -13,7 +13,7 @@ const WalkinIndex = ({ walkins, updateWalkin, addWalkin, }) => (
               updateWalkin={value.updateWalkin}
             />
           )}
-          <Link to="/walkinForm">Add new Walkin</Link>
+          <Link to="/admin/walkinForm">Add new Walkin</Link>
         </>
       )}
   </WalkinConsumer>
