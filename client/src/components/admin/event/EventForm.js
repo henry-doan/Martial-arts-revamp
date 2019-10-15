@@ -28,7 +28,7 @@ class EventForm extends Component {
       this.props.toggleEdit()
     } else {
       this.props.addEvent(this.state)
-      this.props.history.push('/event');
+      this.props.history.push('/admin/event');
     }
     this.setState({ start_date: '', start_time: '', end_date: '', end_time: '', 
     title: '', description: '', slug_link: '', flyer: '', instructor: '' })

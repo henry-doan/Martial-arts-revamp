@@ -6,22 +6,22 @@ const Dashboard = () => (
     <>
         <Menu>
             <Menu.Item>
-                <Link to='/event'>Events</Link>
+                <Link to='/admin/event'>Events</Link>
             </Menu.Item>
             <Menu.Item>
-                <Link to='/program'>Programs</Link>
+                <Link to='/admin/programindex'>Programs</Link>
             </Menu.Item>
             <Menu.Item>
-                <Link to='/instructor'>Instructors</Link>
+                <Link to='/admin/instructor'>Instructors</Link>
             </Menu.Item>
             <Menu.Item>
-                <Link to='/about'>About</Link>
+                <Link to='/admin/about'>About</Link>
             </Menu.Item>
             <Menu.Item>
-                <Link to='/contact'>Contact</Link>
+                <Link to='/admin/contact'>Contact</Link>
             </Menu.Item>
             <Menu.Item>
-                <Link to='/walkin'>Walkin</Link>
+                <Link to='/admin/walkin'>Walkin</Link>
             </Menu.Item>
         </Menu>
     </>

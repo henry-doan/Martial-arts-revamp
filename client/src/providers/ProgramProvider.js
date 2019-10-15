@@ -13,7 +13,7 @@ class ProgramProvider extends Component {
     axios.get('/api/programs')
     .then( res => {
       this.setState({ programs: res.data  })
-      history.push("/programindex")
+      history.push("/admin/programindex")
 
     })
     .catch( err => {
@@ -27,7 +27,7 @@ class ProgramProvider extends Component {
     .then(res => {
       const {programs} = this.state
       this.setState({programs: [ ...programs, res.data]})
-      history.push("/programindex")
+      history.push("/admin/programindex")
     })
     .catch( err => {
       console.log(err)
@@ -44,7 +44,7 @@ class ProgramProvider extends Component {
       })
       // debugger
       this.setState({ programs }, () => {
-        history.push("/programindex");
+        history.push("/admin/programindex");
         // window.location.href = ''
       });
     })

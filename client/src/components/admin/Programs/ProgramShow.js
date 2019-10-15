@@ -10,7 +10,7 @@ class ProgramShow extends Component {
         Title: {title}<br />
         Description: {description}<br />
         <Link to={{
-          pathname: "/programForm",
+          pathname: "/admin/programForm",
           state: { id, title, description, image, gallery, featured_boolean, history }
         }}>Edit Program</Link>
         <button onClick = {() => deleteProgram(id)}>delete</button>
