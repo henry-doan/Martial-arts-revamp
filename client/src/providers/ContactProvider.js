@@ -62,7 +62,7 @@ class ContactProvider extends Component {
       <ContactContext.Provider value={{
         ...this.state,
         addContact: this.addContact,
-        updateContact: this.updateAbout,
+        updateContact: this.updateContact,
         deleteContact: this.deleteContact
       }}>
         { this.props.children }  
