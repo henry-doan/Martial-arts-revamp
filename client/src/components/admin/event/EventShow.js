@@ -3,6 +3,9 @@ import { Header, Segment, Button, Icon, Checkbox, Table, Modal } from 'semantic-
 import ConnectedEventForm from './EventForm';
 import {EventConsumer} from '../../../providers/EventsProvider';
 import {Link} from 'react-router-dom';
+import moment from 'moment'
+
+
 
 class EventShow extends Component {
 
@@ -22,7 +25,7 @@ class EventShow extends Component {
        <>
             <Table.Row>
                 <Table.Cell><h1>{title}</h1></Table.Cell>
-                <Table.Cell>{start_date}</Table.Cell>
+                <Table.Cell>{moment(start_date).format("MM/DD/YY")}</Table.Cell>
                 <Table.Cell>{instructor}</Table.Cell>
 
                 <Table.Cell>
@@ -43,8 +46,8 @@ class EventShow extends Component {
                 :
                     <>
                     <Header>{title}</Header>
-                    <p>{start_date}</p>
-                    <p>{end_date}</p>
+                    <p>{moment(start_date).format("MM/DD/YY")}</p>
+                    <p>{moment(end_date).format("MM/DD/YY")}</p>
                     <p>{start_time}</p>
                     <p>{end_time}</p>
                     <p>{description}</p>
@@ -73,7 +76,7 @@ class EventShow extends Component {
                     </Button>
             </Table.Cell>
             </Table.Row>
-           
+
     </>
    )
  }

@@ -17,6 +17,7 @@ import ProgramIndex from './components/Programs/ProgramIndex';
 import ConnectedProgramForm from './components/Programs/ProgramForm';
 import ConnectedContactForm from './components/admin/Contact/ContactForm';
 import FetchUser from './components/FetchUser';
+import ProgramIndexLandin from './components/staticPages/programs/programLanding';
 
 const App = () => (
   <FetchUser>
@@ -38,6 +39,7 @@ const App = () => (
 
         <Route exact path="/instructor" component={Instructor} />
         <Route exact path="/instructorform" component={InstructorForm} />
+        <Route exact path="/ProgramIndexLandin" component={ProgramIndexLandin} />
 
         <Route component={NoMatch} />
       </Switch>

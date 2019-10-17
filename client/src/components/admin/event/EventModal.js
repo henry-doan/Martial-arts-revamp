@@ -3,6 +3,8 @@ import { Header, Segment, Button, Icon, Checkbox, Table, Modal } from 'semantic-
 import ConnectedEventForm from './EventForm';
 import {EventConsumer} from '../../../providers/EventProvider';
 import {Link} from 'react-router-dom';
+import moment from 'moment'
+
 
 class EventModal extends Component {
 
@@ -12,13 +14,13 @@ class EventModal extends Component {
      console.log(this.props)
  }
 
- 
- handleSelect = () => { 
+
+ handleSelect = () => {
    this.props.addEvent(this.props.id)
    this.props.setModalEvent(false)
   }
 
- handleDelete = () => { 
+ handleDelete = () => {
    this.props.deleteEvent(this.props.id)
    this.props.setModalEvent(false)
   }
@@ -50,8 +52,8 @@ class EventModal extends Component {
                 :
                     <>
                     <Header>{title}</Header>
-                    <p>{start_date}</p>
-                    <p>{end_date}</p>
+                    <p>{moment(start_date).format("MM/DD/YY")}</p>
+                    <p>{moment(end_date).format("MM/DD/YY")}</p>
                     <p>{start_time}</p>
                     <p>{end_time}</p>
                     <p>{description}</p>
@@ -70,7 +72,7 @@ class EventModal extends Component {
                         <Icon name="trash" />
                     </Button>
             </Modal.Content>
-            
+
             <Modal.Actions>
             {/* <Button color='red'>
             <Icon name='remove' /> Cancel
@@ -94,7 +96,7 @@ const ConnectedEventModal = (props) => {
           <EventModal
             { ...props }
             { ...value }
-           
+
           />
         )}
       </EventConsumer>

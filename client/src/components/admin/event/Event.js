@@ -5,11 +5,19 @@ import {EventContext} from '../../../providers/EventProvider';
 import Moment from '../../../components/calendar/Moment'
 import EventModal from './EventModal';
 
+
 const Event = () => {
      const value = useContext(EventContext);
      const [modalEvent, setModalEvent] = useState(false);
      const [modalShowEvent, setModalShowEvent] = useState({});
-     
+     const formatEvent = () => {
+       return value.events.map( (event) => ({
+        ...event,
+         start_date: new Date(event.start_date + " 00:00"),
+         end_date: new Date(event.end_date + " 00:00"),
+       }))
+     }
+
      useEffect( () => {
         {value.getEvent()}
      },[]);
@@ -22,15 +30,15 @@ const Event = () => {
         <>
                 <EventModal open={modalEvent} setModalEvent={setModalEvent} {...modalShowEvent} />
                 <Moment
-                events={value.events}
+                events={formatEvent()}
                 onSelectSlot={({s,e}) => console.log(s,e)}
                 onSelectEvent={(event) => {
                 setModalShowEvent(event);
                 setModalEvent(true);
                 }}
                  />
-        
-               
+
+
             <Button
                 floated='right'
                 icon
@@ -39,12 +47,12 @@ const Event = () => {
                 primary
                 size='small'
             >
-            <Icon name='calendar alternate outline' /> 
+            <Icon name='calendar alternate outline' />
             <Link to='/eventform' color='white'>Add Event</Link>
             </Button>
-                       
+
                 </>
-   ) 
+   )
 }
 
 

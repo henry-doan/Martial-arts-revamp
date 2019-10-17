@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-export const EventContext = React.createContext(); 
+export const EventContext = React.createContext();
 export const EventConsumer = EventContext.Consumer;
 
 export class EventProvider extends React.Component {
@@ -12,7 +12,8 @@ export class EventProvider extends React.Component {
     axios.get('/api/events')
     .then( res => {
       console.log("success")
-      this.setState({ events: res.data})
+
+      this.setState({ events: res.data })
     })
     .catch( err => {
       console.log("fail")

@@ -9,7 +9,7 @@ const Dashboard = () => (
         <Link to='/event'>Events</Link>
     </Menu.Item>
     <Menu.Item>
-        <Link to='/program'>Programs</Link>
+        <Link to='/programindex'>Programs</Link>
     </Menu.Item>
     <Menu.Item>
         <Link to='/instructor'>Instructors</Link>
