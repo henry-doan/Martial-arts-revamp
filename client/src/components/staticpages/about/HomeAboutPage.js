@@ -4,14 +4,13 @@ import PageNavbar from '../pagesnavbar/PageNavbar';
 import Footer from '../footer/Footer';
 import {HomeContainer} from '../../styledComponents/HomeStyles';
 import {Hero2Cover, Hero2CoverH2} from '../../styledComponents/Home2HeroStyles';
-import parse from 'html-react-parser';
 import Home2Hero from '../home/Home2Hero';
 
 const HomeAboutPage = () => (
     <>
     <HomeContainer>
         <PageNavbar />
-        <Hero2Cover > 
+        <Hero2Cover >
           <Hero2CoverH2>Learn About Us</Hero2CoverH2>
         </Hero2Cover>
       <HomeAbout />
