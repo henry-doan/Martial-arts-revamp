@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu } from 'semantic-ui-react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import InstructorView from '../staticPages/instructorView/InstructorView';
 
 const Dashboard = () => (
     <>
@@ -24,6 +25,7 @@ const Dashboard = () => (
                 <Link to='/admin/walkin'>Walkin</Link>
             </Menu.Item>
         </Menu>
+        <InstructorView />
     </>
 )
 

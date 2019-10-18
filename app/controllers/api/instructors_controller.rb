@@ -30,7 +30,7 @@ class Api::InstructorsController < ApplicationController
     private
     def instructor_params
         params.require(:instructor).permit(:first_name, :last_name, :specialty, :years, 
-        :experience, :sm_facebook, :sm_linkedin, :sm_twitter, :sm_instagram, :sm_youtube)
+        :experience, :sm_facebook, :sm_linkedin, :sm_twitter, :sm_instagram, :sm_youtube, :bio, :image)
     end
 
 end
