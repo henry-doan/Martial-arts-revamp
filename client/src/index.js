@@ -12,7 +12,6 @@ import ProgramProvider from './providers/ProgramProvider';
 import InstructorProvider from './providers/InstructorProvider';
 import ContactProvider from './providers/ContactProvider';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-
 import WalkinProvider from './providers/WalkinProvider';
 
 initMiddleware();

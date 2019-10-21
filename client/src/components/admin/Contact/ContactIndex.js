@@ -1,34 +1,22 @@
 import React, {Component} from 'react';
 import ContactShow from "./ContactShow";
-import { ContactConsumer } from '../../../providers/ContactProvider';
-import {Link} from 'react-router-dom';
+import {Link} from "react-router-dom";
+import { ContactConsumer } from '../../../providers/ContactProvider'
 
-const ContactIndex = ({contacts, updateContact, deleteContact, addContact, history }) => (
-
+const ContactIndex = ({ contacts, updateContact, deleteContact, addContact, }) => (
   <ContactConsumer>
-
-        { value => (
-            <div>
-
-            { value.contacts.map(contact =>
-                <div>
-                <ContactShow
-                  {...contact}
-                  updateContact={value.updateContact}
-                  deleteContact={value.deleteContact}
-                  />
-              </div>
-              )}
-
-              <Link to={{pathname: "/contact"}}>Add New </Link>
-
-              </div>
-        )}
-
-
-    </ContactConsumer>
-
-
+    { value => (
+        <>
+          { value.contacts.map(contact =>
+            <ContactShow
+              key={contact.id}
+              {...contact}
+              deleteContact={value.deleteContact}
+            />
+          )}
+          <Link to="/Contact">Add new Contact</Link>
+        </>
+      )}
+  </ContactConsumer>
 )
-
 export default ContactIndex;
