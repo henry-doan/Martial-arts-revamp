@@ -17,7 +17,6 @@ Phone:
 <br />
 <br />
 
-
 Feel free to call us anytime.  Please leave a message if you reach our voicemail.  We value your call and will get back to you promptly.
 <br />
 <br />
@@ -30,6 +29,7 @@ Email us or write to us for info @ bernalesinstitute.com
 Hours:
 <br />
 <br />
+
 Monday:
 <br />
 11 a.m. to 1 p.m.
@@ -83,10 +83,6 @@ Sunday:
 CLOSED
 <br />
 <br />
-
- 
-
- 
 
 ANNUAL STUDIO CLOSURES:
 <br />
