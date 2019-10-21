@@ -1,21 +1,23 @@
-import React, {Component} from './node_modules/react';
-import WalkinShow from "./WalkinShow";
-import {Link} from './node_modules/react-router-dom';
+import React, {Component} from 'react';
+import ContactShow from "./ContactShow";
+import {Link} from "react-router-dom";
+import { ContactConsumer } from '../../../providers/ContactProvider'
 
-const WalkinIndex = ({ walkins, updateWalkin, addWalkin, }) => (
-  <WalkinConsumer>
+const ContactIndex = ({ contacts, updateContact, deleteContact, addContact, }) => (
+  <ContactConsumer>
     { value => (
         <>
-          { value.walkins.map(walkin =>
-            <WalkinShow
-              key={walkin.id}
-              {...walkin}
-              updateWalkin={value.updateWalkin}
+          { value.contacts.map(contact =>
+            <ContactShow
+              key={contact.id}
+              {...contact}
+              updateContact={value.updateContact}
+              deleteContact={value.deleteContact}
             />
           )}
-          <Link to="/walkinForm">Add new Walkin</Link>
+          <Link to="/Contact">Add new Contact</Link>
         </>
       )}
-  </WalkinConsumer>
+  </ContactConsumer>
 )
-export default WalkinIndex;
+export default ContactIndex;

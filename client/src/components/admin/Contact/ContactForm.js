@@ -1,81 +1,108 @@
 import React, { Component } from 'react';
+import {ContactConsumer} from '../../../providers/ContactProvider';
 import { Form } from 'semantic-ui-react';
-import { ContactConsumer } from '../../../providers/ContactProvider';
 
 class ContactForm extends Component {
- state = { name: "", email: "", phone: "", interest: "", message: "" }
+  state = { name: '', phone: '', email: '', interest: '',
+   message: '', 
+}
 
- handleChange = (e, { name, value }) => this.setState({ [name]: value })
+  componentDidMount() {
+    if (this.props.id) {
+      this.setState({ name: this.props.name, phone: this.props.phone, 
+        email: this.props.email, interest: this.props.interest, message: this.props.message,
+      })
+    }
+  }
 
- handleSubmit = (e) => {
-   e.preventDefault();
-   const contact = { ...this.state }
-   this.props.addContact(contact)
-   this.setState({ name: "", email: "", phone: "", interest: "", message: "" })
-   window.location.href = '/'
- }
+  handleChange = (e) => {
+    const { name, value } = e.target
+    this.setState({ [name]: value })
+  }
 
- render() {
-   const { name, email, phone, interest, message } = this.state;
-   return (
-     <Form onSubmit={this.handleSubmit}>
-       <Form.Input
-         label="Name"
-         type="text"
-         name="name"
-         value={name}
-         onChange={this.handleChange}
-       />
-       <Form.Input
-         label="Email"
-         type="text"
-         name="email"
-         value={email}
-         onChange={this.handleChange}
-       />
-        <Form.Input
-         label="Phone"
-         type="text"
-         name="phone"
-         value={phone}
-         onChange={this.handleChange}
-       />
-        <Form.Input
-         label="Interest"
-         type="text"
-         name="interest"
-         value={interest}
-         onChange={this.handleChange}
-       />
-        <Form.Input
-         label="Message"
-         type="text"
-         name="message"
-         value={message}
-         onChange={this.handleChange}
-       />
-       <Form.Button color="gray">Save</Form.Button>
-     </Form>
-   )
- }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    if (this.props.id) {
+      this.props.updateContact(this.props.id, this.state)
+      this.props.toggleEdit()
+    } else {
+      this.props.addContact(this.state)
+      this.props.history.push('/dashboard');
+    }
+    this.setState({ name: '', phone: '', email:'', interest: '',
+    message: '',})
+  }
+
+  render() {
+    const { name, email, phone, interest, message } = this.state 
+    return (
+      <Form onSubmit={this.handleSubmit}>
+
+        <Form.Input 
+          required
+          placeholder='Jane Doe'
+          label='Name'
+          name='name'
+          value={name}
+          onChange={this.handleChange}
+        />
+
+        <Form.Input 
+          required
+          placeholder='123-456-7890'
+          label='Phone'
+          name='phone'
+          value={phone}
+          onChange={this.handleChange}
+        />
+
+        <Form.Input 
+          required
+          placeholder='jane@example.com'
+          label='Email'
+          name='email'
+          value={email}
+          onChange={this.handleChange}
+        />
+
+        <Form.Input 
+          required
+          placeholder='Muay Thai Boxing'
+          label='Interest'
+          name='interest'
+          value={interest}
+          onChange={this.handleChange}
+        />
+
+        <Form.Input 
+          required
+          placeholder='Please leave us a comment or question if you have any!'
+          label='Message'
+          name='message'
+          value={message}
+          onChange={this.handleChange}
+        />
+
+        <Form.Button color='green'>Submit</Form.Button>
+        
+      </Form>
+    )
+  }
 }
 
 const ConnectedContactForm = (props) => {
- return (
-   <ContactConsumer>
-     { value => (
-       <ContactForm
-         { ...props }
-         name={value.name}
-         email={value.email}
-         phone={value.phone}
-         interest={value.interest}
-         message={value.message}
-         addContact = {value.addContact}
-       />
-     )}
-   </ContactConsumer>
- )
+  return (
+    <ContactConsumer>
+      { value => (
+        <ContactForm
+          { ...props }
+          {...value}
+
+          addContact={value.addContact}
+        />
+      )}
+    </ContactConsumer>
+  )
 }
 
 export default ConnectedContactForm;
