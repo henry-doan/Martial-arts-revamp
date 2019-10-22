@@ -25,7 +25,7 @@ import Hotkey from './components/staticpages/shared/Hotkey';
 import ProgramLandingShow from './components/admin/programs/ProgramLandingShow';
 import ProgramLandingShows from './components/admin/programs/ProgramLandingShows';
 import ContactIndex from './components/admin/contact/ContactIndex';
-import ContactPage from './components/staticpages/staticcontact/ContactPage';
+import ContactPage from './components/staticpages/staticcontact/contact/ContactPage';
 
 
 const App = () => (
