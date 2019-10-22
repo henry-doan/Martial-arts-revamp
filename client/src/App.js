@@ -25,6 +25,8 @@ import Hotkey from './components/staticpages/shared/Hotkey';
 import ProgramLandingShow from './components/admin/programs/ProgramLandingShow';
 import ProgramLandingShows from './components/admin/programs/ProgramLandingShows';
 import ContactIndex from './components/admin/contact/ContactIndex';
+import ContactPage from './components/staticpages/staticcontact/contact/ContactPage';
+
 
 const App = () => (
   <FetchUser>
@@ -59,6 +61,8 @@ const App = () => (
         <Route exact path="/instructorform" component={InstructorForm} />
         <Route exact path="/programLandingShow" component={ProgramLandingShow} />
         <Route exact path="/programshow/:id" component={ProgramLandingShows} />
+        
+        <Route exact path="/contactpage" component={ContactPage} />
 
         <Route component={NoMatch} />
       </Switch>
