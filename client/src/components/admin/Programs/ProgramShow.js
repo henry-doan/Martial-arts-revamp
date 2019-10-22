@@ -14,9 +14,6 @@ class ProgramShow extends Component {
           state: { id, title, description, image, gallery, featured_boolean, history }
         }}>Edit Program</Link>
         <button onClick = {() => deleteProgram(id)}>delete</button>
-
-
-
       </div>
     )
   }

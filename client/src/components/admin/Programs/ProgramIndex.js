@@ -11,6 +11,8 @@ const ProgramIndex = ({programs, updateProgram, deleteProgram, addProgram, histo
             <div>
             { value.programs.map(program =>
                 <div>
+
+
                 <ProgramShow
                   {...program}
                   updateProgram={value.updateProgram}
@@ -18,11 +20,12 @@ const ProgramIndex = ({programs, updateProgram, deleteProgram, addProgram, histo
                   />
 
               </div>
+
               )}
 
               <Link to={{pathname: "/admin/programForm"}}>Add New </Link>
-
               </div>
+
         )}
     </ProgramConsumer>
 )
