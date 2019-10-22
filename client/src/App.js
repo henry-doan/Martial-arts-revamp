@@ -14,10 +14,12 @@ import InstructorForm from './components/admin/instructor/InstructorForm';
 import Dashboard from './components/admin/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProgramIndex from './components/Programs/ProgramIndex';
+import ProgramLandingShow from './components/Programs/ProgramLandingShow';
+import ProgramLandingShows from './components/Programs/ProgramLandingShows';
 import ConnectedProgramForm from './components/Programs/ProgramForm';
 import ConnectedContactForm from './components/admin/Contact/ContactForm';
+import ContactIndex from './components/admin/Contact/ContactIndex';
 import FetchUser from './components/FetchUser';
-import ProgramIndexLandin from './components/staticPages/programs/programLanding';
 
 const App = () => (
   <FetchUser>
@@ -39,7 +41,8 @@ const App = () => (
 
         <Route exact path="/instructor" component={Instructor} />
         <Route exact path="/instructorform" component={InstructorForm} />
-        <Route exact path="/ProgramIndexLandin" component={ProgramIndexLandin} />
+        <Route exact path="/programLandingShow" component={ProgramLandingShow} />
+        <Route exact path="/programshow/:id" component={ProgramLandingShows} />
 
         <Route component={NoMatch} />
       </Switch>

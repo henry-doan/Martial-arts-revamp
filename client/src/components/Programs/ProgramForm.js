@@ -24,7 +24,7 @@ class ProgramForm extends React.Component {
    }
 
  handleSubmit = (e) => {
-   const { title,description, image, gallery, history } = this.props
+   const { title,description, image, gallery, featured_boolean, history } = this.props
    e.preventDefault();
    if (this.props.location.state) {
      const { id } = this.props.location.state
@@ -33,11 +33,11 @@ class ProgramForm extends React.Component {
      this.props.addProgram(this.state)
      history.push("/programindex")
    }
-   this.setState({ title: "", description: "", image:"", gallery:"" });
+   this.setState({ title: "", description: "", image:"", gallery:"", featured_boolean:"" });
  };
 
   render() {
-    const { title, description, image, gallery } = this.state;
+    const { title, description, image, gallery, featured_boolean } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
@@ -66,6 +66,13 @@ class ProgramForm extends React.Component {
           label="gallery"
           name="gallery"
           value={gallery}
+          onChange={this.handleChange}
+          type="text"
+        />
+        <Form.Input
+          label="featured_boolean"
+          name="featured_boolean"
+          value={featured_boolean}
           onChange={this.handleChange}
           type="text"
         />

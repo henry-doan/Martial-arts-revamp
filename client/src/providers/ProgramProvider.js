@@ -7,14 +7,18 @@ export const ProgramConsumer = ProgramContext.Consumer;
 
 class ProgramProvider extends Component {
 
-  state = { programs: [] };
+  state = { programs: [], featuredPro: [] };
 
   componentDidMount(history){
     axios.get('/api/programs')
     .then( res => {
       this.setState({ programs: res.data  })
+      res.data.map(p => {
+        if (p.featured_boolean === true && this.state.featuredPro.length <= 4) {
+          this.setState({ featuredPro: [...this.state.featuredPro, p] })
+        }
+      })
       history.push("/programindex")
-
     })
     .catch( err => {
       console.log(err)
