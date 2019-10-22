@@ -7,6 +7,7 @@ import EventModal from './EventModal';
 import Navbar from '../../Navbar';
 
 
+
 const Event = () => {
      const value = useContext(EventContext);
      const [modalEvent, setModalEvent] = useState(false);

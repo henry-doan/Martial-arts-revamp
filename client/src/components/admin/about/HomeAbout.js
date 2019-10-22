@@ -2,7 +2,6 @@ import React, {useEffect, useContext, useState} from 'react';
 import { Grid, Header, Card, Image } from 'semantic-ui-react';
 import { AboutContext } from '../../../providers/AboutProvider';
 import {AboutHead, AboutWrap, AboutText, Hero2CoverH2} from '../../styledComponents/AboutPageStyles';
-import parse from 'html-react-parser';
 import ConnectedAboutForm from './AboutForm';
 import Navbar from '../../Navbar';
 
