@@ -4,15 +4,15 @@ import { Form } from 'semantic-ui-react';
 
 class InstructorForm extends Component {
   state = { first_name: '', last_name: '', specialty:'', years: '',
-   experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '', image: '' 
+   experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '', image: '', bio: '' 
 }
 
   componentDidMount() {
     if (this.props.id) {
       this.setState({ first_name: this.props.first_name, last_name: this.props.last_name, 
-        specialty: this.props.specialty, years: this.props.years, images: this.props.images, 
+        specialty: this.props.specialty, years: this.props.years, image: this.props.image, 
         experience: this.props.experience, sm_facebook: this.props.sm_facebook, 
-        sm_linkedin: this.props.sm_linkedin, sm_instagram: this.props.sm_instagram, sm_youtube: this.props.sm_youtube, 
+        sm_linkedin: this.props.sm_linkedin, sm_instagram: this.props.sm_instagram, sm_youtube: this.props.sm_youtube, bio: this.props.bio,
       })
     }
   }
@@ -32,11 +32,11 @@ class InstructorForm extends Component {
       this.props.history.push('/admin/instructor');
     }
     this.setState({ first_name: '', last_name: '', specialty:'', years: '',
-    experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '', image: ''})
+    experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '', image: '', bio: ''})
   }
 
   render() {
-    const { first_name, last_name, specialty, years,image, experience, sm_facebook, sm_linkedin, sm_instagram, sm_youtube} = this.state 
+    const { first_name, last_name, specialty, years, image, experience, sm_facebook, sm_linkedin, sm_instagram, sm_youtube, bio} = this.state 
     return (
       <Form onSubmit={this.handleSubmit}>
 
@@ -85,15 +85,14 @@ class InstructorForm extends Component {
           onChange={this.handleChange}
         />
 
-        {/* <Form.Select 
+        <Form.Input
           required
-          placeholder='Expierience'
-          label='experience'
-          name='experience'
-          value={experience}
+          placeholder='Bio'
+          label='bio'
+          name='bio'
+          value={bio}
           onChange={this.handleChange}
-          options={experienceOptions}
-        /> */}
+        />
         
         <Form.Input 
           required
@@ -154,24 +153,5 @@ const ConnectedInstructorForm = (props) => {
   )
 }
 
-// const experienceOptions = [
-//     { key: "nb", text: "No Belt", value: "No Belt", },
-//     { key: "wb", text: "White Belt", value: "No Belt", },
-//     { key: "yb", text: "Yellow Belt", value: "No Belt", },
-//     { key: "ybb", text: "Yellow Belt", value: "No Belt", },
-//     { key: "gb", text: "Green Belt", value: "No Belt", },
-//     { key: "gbb", text: "Green Black Belt", value: "No Belt", },
-//     { key: "pb", text: "Purple Belt", value: "No Belt", },
-//     { key: "pbb", text: "Purple Black Belt", value: "No Belt", },
-//     { key: "ob", text: "Orange Belt", value: "No Belt", },
-//     { key: "obb", text: "Orange Black Belt", value: "No Belt", },
-//     { key: "bb", text: "Blue Belt", value: "No Belt", },
-//     { key: "bbb", text: "Blue Black Belt", value: "No Belt", },
-//     { key: "brb", text: "Brown Belt", value: "No Belt", },
-//     { key: "brbb", text: "Brown Black Belt", value: "No Belt", },
-//     { key: "rb", text: "Red Belt", value: "No Belt", },
-//     { key: "rbb", text: "Red Black Belt", value: "No Belt", },
-//     { key: "blckb", text: "Black Belt", value: "No Belt", },
-// ];
 
 export default ConnectedInstructorForm;

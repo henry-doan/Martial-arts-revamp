@@ -1,6 +1,6 @@
-import React, {Component} from './node_modules/react';
+import React, {Component} from 'react';
 import WalkinShow from "./WalkinShow";
-import {Link} from './node_modules/react-router-dom';
+import {Link} from 'react-router-dom';
 
 const WalkinIndex = ({ walkins, updateWalkin, addWalkin, }) => (
   <WalkinConsumer>

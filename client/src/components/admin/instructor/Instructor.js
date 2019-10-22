@@ -27,7 +27,6 @@ const Instructor = () => {
             </Table.Header>
 
             <Table.Body>
-            {value.getInstructor()}
             { value.instructors.map(instructor =>
             
             <ConnectedInstructorShow 

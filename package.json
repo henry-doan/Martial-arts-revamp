@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-responsive-carousel": "^3.1.50",
+    "styled-components": "^4.4.0"
+  }
+}

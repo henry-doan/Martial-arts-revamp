@@ -18,11 +18,12 @@ import ConnectedProgramForm from './components/admin/programs/ProgramForm';
 import FetchUser from './components/FetchUser';
 import ConnectedContactForm from './components/admin/contact/ContactForm';
 import ConnectedWalkinForm from './components/admin/walkin/WalkinForm';
+import Footer from './components/staticPages/footer/Footer'
 
 const App = () => (
   <FetchUser>
     <Navbar />
-    <Container>
+    <Container fluid>
       <Switch>
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
@@ -44,6 +45,7 @@ const App = () => (
         <Route component={NoMatch} />
       </Switch>
     </Container>
+    <Footer />
   </FetchUser>
 )
 
