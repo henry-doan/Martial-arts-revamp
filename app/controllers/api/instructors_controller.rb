@@ -24,7 +24,7 @@ class Api::InstructorsController < ApplicationController
 
     def destroy
         Instructor.find(params[:id]).destroy
-        render json: {message: 'instructor deleted'}
+        render json: {message: 'Instructor deleted'}
     end
 
     private

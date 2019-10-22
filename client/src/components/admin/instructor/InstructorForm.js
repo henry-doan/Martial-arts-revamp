@@ -36,7 +36,7 @@ class InstructorForm extends Component {
   }
 
   render() {
-    const { first_name, last_name, specialty, years,image, experience, sm_facebook, sm_linkedin, sm_instagram, sm_youtube, bio} = this.state 
+    const { first_name, last_name, specialty, years, image, experience, sm_facebook, sm_linkedin, sm_instagram, sm_youtube, bio} = this.state 
     return (
       <Form onSubmit={this.handleSubmit}>
 
@@ -153,24 +153,5 @@ const ConnectedInstructorForm = (props) => {
   )
 }
 
-// const experienceOptions = [
-//     { key: "nb", text: "No Belt", value: "No Belt", },
-//     { key: "wb", text: "White Belt", value: "No Belt", },
-//     { key: "yb", text: "Yellow Belt", value: "No Belt", },
-//     { key: "ybb", text: "Yellow Belt", value: "No Belt", },
-//     { key: "gb", text: "Green Belt", value: "No Belt", },
-//     { key: "gbb", text: "Green Black Belt", value: "No Belt", },
-//     { key: "pb", text: "Purple Belt", value: "No Belt", },
-//     { key: "pbb", text: "Purple Black Belt", value: "No Belt", },
-//     { key: "ob", text: "Orange Belt", value: "No Belt", },
-//     { key: "obb", text: "Orange Black Belt", value: "No Belt", },
-//     { key: "bb", text: "Blue Belt", value: "No Belt", },
-//     { key: "bbb", text: "Blue Black Belt", value: "No Belt", },
-//     { key: "brb", text: "Brown Belt", value: "No Belt", },
-//     { key: "brbb", text: "Brown Black Belt", value: "No Belt", },
-//     { key: "rb", text: "Red Belt", value: "No Belt", },
-//     { key: "rbb", text: "Red Black Belt", value: "No Belt", },
-//     { key: "blckb", text: "Black Belt", value: "No Belt", },
-// ];
 
 export default ConnectedInstructorForm;

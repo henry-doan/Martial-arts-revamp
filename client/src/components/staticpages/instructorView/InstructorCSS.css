@@ -1,13 +1,44 @@
 /* DESKTOP CODE */
+.thumb{
+  border: 0px solid #1c1c1c !important;
+  width: 0px;
+    margin: auto;
+    white-space: nowrap;
+}
+
 .carousel-status{
   display: none;
+}
+ 
+.CarWrap{
+  width: 50%;
+  position: relative;
+  display: flex; 
+  justify-content: flex-end; 
+  margin: 10px;
+  overflow-wrap:break-word;
+}
+.instructorContent{
+  color:black;
+  position: relative;
+  z-index: 1;
+  left:720px;
+  top:-475px;
+  display: block;
+  margin: 2rem;
+  overflow-wrap:break-word;
 }
 
 /* margin: 0 2em;
 display: inline; */
 
+/* p{
+  width: 100%;
+  overflow-wrap:break-word;
+} */
 /* desktop */
 @media (min-width: 1200px) {
+
 
   .CarWrap{
     width: 50%;
@@ -15,6 +46,8 @@ display: inline; */
     display: flex; 
     justify-content: flex-end; 
     margin: 10px;
+    background-color: black;
+    overflow-wrap:break-word;
   }
 
   .instructorContent{
@@ -24,15 +57,16 @@ display: inline; */
     left:720px;
     top:-475px;
     display: block;
-    margin: 1rem;
+    margin: 2rem;
+    overflow-wrap:break-word;
   }
 
   .root {
-    background-color: #282828;
+    background-color: black;
   }
   
-  .ui container {
-    background-color: white;
+  .ui.container {
+    background-color: black;
   }
   .carousel{
     width: 45rem;
@@ -60,6 +94,7 @@ display: inline; */
     height: 50px;
     margin: 0 auto !important;
     border-radius: 50% !important;
+    border: none !important;
   }
 }
 
@@ -76,9 +111,9 @@ display: inline; */
       margin: 2em;
       position: relative;
     }
-    .instructorContent{
+    .instructorContent {
       text-align: center;
-      color:black;
+      color:white;
       position: relative;
       display: block;
       margin: 1rem;
@@ -88,7 +123,7 @@ display: inline; */
     }
     
     .ui container {
-      background-color: white;
+      background-color: #282828;
     }
     .carousel{
       margin: 0em;
@@ -117,4 +152,22 @@ display: inline; */
       margin: 0 auto !important;
       border-radius: 50% !important;
     }
+
+    p {
+      /* margin: 0%;
+      max-width: 50px; */
+    }
+}
+
+.instructorContent p {
+  width: 45%;
+  color: white;
+}
+
+h1{
+  color: white;
+}
+
+Icon {
+color: white;
 }

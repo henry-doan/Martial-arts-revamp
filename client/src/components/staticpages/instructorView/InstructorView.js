@@ -8,9 +8,11 @@ import instructorForm from '../../admin/instructor/InstructorForm';
 import { InstructorConsumer } from '../../../providers/InstructorProvider';
  
 class InstructorView extends Component {
-    state = { currentInstructorIndex: 0, currentInstructor: {} }
+    state = { currentInstructorIndex: 0, previousNum: 0 }
     
-    onInstructorChange = (newIndex) => this.setState({currentInstructorIndex: newIndex});
+    onInstructorChange = (newIndex) => {
+      this.setState({currentInstructorIndex: newIndex});
+    }
 
     renderInstructorImages = () => {
       return this.props.instructors.map((instructor) => (
@@ -30,20 +32,19 @@ class InstructorView extends Component {
             </Carousel>
           </div>
 
-            <div>
+            {/* <div> */}
             {/* <div style={{display: "flex", justifyContent: "flex-end", margin: "10px"}}> */}
               {/* <h1>Instructor {insructors[this.state.currentInstructor].name}</h1> */}
               <section class="instructorContent">
               <h1>Instructor: {instructor && instructor.first_name} {instructor && instructor.last_name}</h1>
               <p>Speciality: {instructor && instructor.specialty}</p>
               <p>Text: {instructor && instructor.bio}</p>
-            <Icon name='facebook' size='small' />
-            <Icon name='twitter' size='small' />        
-            <Icon name='instagram' size='small' />
+            <Icon name='facebook' size='large' />
+            <Icon name='twitter' size='large' />        
+            <Icon name='instagram' size='large' />
+            
               </section>
-              
-            </div>
-            </div>
+              </div>
         );
     }
 };
