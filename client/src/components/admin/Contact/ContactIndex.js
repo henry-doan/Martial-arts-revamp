@@ -1,21 +1,34 @@
 import React, {Component} from 'react';
-import WalkinShow from "./WalkinShow";
+import ContactShow from "./ContactShow";
+import { ContactConsumer } from '../../../providers/ContactProvider';
 import {Link} from 'react-router-dom';
 
-const WalkinIndex = ({ walkins, updateWalkin, addWalkin, }) => (
-  <WalkinConsumer>
-    { value => (
-        <>
-          { value.walkins.map(walkin =>
-            <WalkinShow
-              key={walkin.id}
-              {...walkin}
-              updateWalkin={value.updateWalkin}
-            />
-          )}
-          <Link to="/admin/walkinForm">Add new Walkin</Link>
-        </>
-      )}
-  </WalkinConsumer>
+const ContactIndex = ({contacts, updateContact, deleteContact, addContact, history }) => (
+
+  <ContactConsumer>
+
+        { value => (
+            <div>
+
+            { value.contacts.map(contact =>
+                <div>
+                <ContactShow
+                  {...contact}
+                  updateContact={value.updateContact}
+                  deleteContact={value.deleteContact}
+                  />
+              </div>
+              )}
+
+              <Link to={{pathname: "/contact"}}>Add New </Link>
+
+              </div>
+        )}
+
+
+    </ContactConsumer>
+
+
 )
-export default WalkinIndex;
+
+export default ContactIndex;

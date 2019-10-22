@@ -1,22 +1,16 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 
-class ContactShow extends Component {  
+class ContactShow extends Component {
   render(){
-    const { name, email, phone, interest, notes, updateContact } = this.props
+    const { id, name, email, phone, interest, notes, updateContact, deleteContact, history } = this.props
     return (
       <div>
-        <h1>id: {id}<br />
-        Name: {name}<br />
-        Email: {email}<br />
-        Phone: {phone}<br />
-        Interest: {interest}<br />
-        Notes: {notes}<br />
-        <Link to={{
-          pathname: "/contactForm",
-          state: { name, email, phone, interest, notes }
-        }}></Link>
-        </h1>
+        <h1>Contact List</h1>
+        <h1>Name: {name}</h1>
+        <h2>Email: {email}</h2>
+        <h2>Phone: {phone}</h2>
+        <button onClick = {() => deleteContact(id)}>delete</button>
         <br />
       </div>
     )

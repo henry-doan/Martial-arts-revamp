@@ -16,17 +16,15 @@ import ProtectedRoute from './components/ProtectedRoute';
 import ProgramIndex from './components/admin/programs/ProgramIndex';
 import ConnectedProgramForm from './components/admin/programs/ProgramForm';
 import FetchUser from './components/FetchUser';
-
 import ConnectedContactForm from './components/admin/contact/ContactForm';
 import ConnectedWalkinForm from './components/admin/walkin/WalkinForm';
 import Footer from './components/staticpages/footer/Footer'
 import Home from './components/staticpages/home/Home';
 import HomeAboutPage from './components/staticpages/about/HomeAboutPage';
 import Hotkey from './components/staticpages/shared/Hotkey';
-
-
-import ProgramIndexLandin from './components/staticpages/programs/programLanding';
-
+import ProgramLandingShow from './components/admin/programs/ProgramLandingShow';
+import ProgramLandingShows from './components/admin/programs/ProgramLandingShows';
+import ContactIndex from './components/admin/contact/ContactIndex';
 
 const App = () => (
   <FetchUser>
@@ -48,6 +46,7 @@ const App = () => (
         <Route exact path="/admin/instructorform" component={InstructorForm} />
 
         <Route exact path="/admin/contact" component={ConnectedContactForm} />
+        <Route exact path="/admin/contacts" component={ContactIndex} />
         <Route exact path="/admin/walkin" component={ConnectedWalkinForm} />
 
         {/* STATIC PAGES */}
@@ -56,8 +55,10 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={HomeAboutPage} />
 
-        <Route exact path="/ProgramIndexLandin" component={ProgramIndexLandin} />
-
+        <Route exact path="/instructor" component={Instructor} />
+        <Route exact path="/instructorform" component={InstructorForm} />
+        <Route exact path="/programLandingShow" component={ProgramLandingShow} />
+        <Route exact path="/programshow/:id" component={ProgramLandingShows} />
 
         <Route component={NoMatch} />
       </Switch>

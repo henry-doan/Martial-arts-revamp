@@ -15,7 +15,8 @@ class ProgramShow extends Component {
         }}>Edit Program</Link>
         <button onClick = {() => deleteProgram(id)}>delete</button>
 
-        <br />
+
+
       </div>
     )
   }
