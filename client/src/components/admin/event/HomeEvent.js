@@ -3,11 +3,10 @@ import { Button, Icon } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import {EventContext} from '../../../providers/EventProvider';
 import Moment from '../../../components/calendar/Moment'
-import EventModal from './EventModal';
-import Navbar from '../../Navbar';
+import HomeEventModal from './HomeEventModal';
 
 
-const Event = () => {
+const HomeEvent = () => {
      const value = useContext(EventContext);
      const [modalEvent, setModalEvent] = useState(false);
      const [modalShowEvent, setModalShowEvent] = useState({});
@@ -29,8 +28,7 @@ const Event = () => {
 
    return (
         <>
-        <Navbar/>
-                <EventModal open={modalEvent} setModalEvent={setModalEvent} {...modalShowEvent} />
+                <HomeEventModal open={modalEvent} setModalEvent={setModalEvent} {...modalShowEvent} />
                 <Moment
                 events={formatEvent()}
                 onSelectSlot={({s,e}) => console.log(s,e)}
@@ -58,4 +56,4 @@ const Event = () => {
 }
 
 
-export default Event;
+export default HomeEvent;

@@ -37,5 +37,4 @@ export const FooterText = styled.p`
 text-align: center;
 margin:  2em 0;
 // margin: auto;
-
 `;

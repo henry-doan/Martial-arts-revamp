@@ -8,7 +8,7 @@ export const AboutConsumer = AboutContext.Consumer;
 class AboutProvider extends Component {
   state = { abouts: [] }
 
-  getAbout = () => {
+  componentDidMount() {
     axios.get('/api/abouts')
       .then( res => {
         this.setState({ abouts: res.data })
