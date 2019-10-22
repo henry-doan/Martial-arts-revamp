@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { Grid, Image, GridColumn } from 'semantic-ui-react'
+import bima from '../../assets/images/bima.jpg'
+import { Grid, Image, GridColumn } from 'semantic-ui-react';
 // import Iframe from './Iframe';
 class ContactPage extends Component {
   render() {
@@ -31,7 +32,7 @@ Salt Lake City, Utah  84115
 Email us for info @ bernalesinstitute.com
 <br />
 <br />
-{/* <Iframe /> */}
+<Image src={bima} />
 <section>
   
 
