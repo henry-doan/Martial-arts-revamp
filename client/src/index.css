@@ -12,13 +12,11 @@ code {
     monospace;
 }
 
-
-
-@media only screen and (max-width: 769px) {
+/* @media only screen and (max-width: 769px) {
   .desktopOnly{
-    /* display: none; */
-   background: url(./components/staticPages/assets/images/poster.jpeg);
-   min-height: 100vh;
+    display: none; 
+   background: url(./components/staticpages/assets/images/poster.jpeg);
+   min-height: 100vh; 
   }
 }
 
@@ -26,4 +24,4 @@ code {
 .text-white {
   color: white !important;
   text-align: center;
-}
+}  */

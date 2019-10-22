@@ -37,25 +37,6 @@ const Footer = () => (
         <Icon name='twitter' size='big' />   
         </FooterSocial>
         </FooterText>
-
-        {/* <Grid  columns={8}>
-          <Grid.Row centered >
-
-
-            <Grid.Column>
-            <Icon name='facebook' size='big' />
-            </Grid.Column>
-
-            <Grid.Column> 
-            <Icon name='twitter' size='big' />        
-            </Grid.Column>
-
-            <Grid.Column>
-            <Icon name='instagram' size='big' />
-            </Grid.Column>
-
-          </Grid.Row>
-        </Grid> */}
         
         <FooterText>
         &copy; 1996-2019 • Bernales Institute of Martial Arts

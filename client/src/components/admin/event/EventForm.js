@@ -120,7 +120,7 @@ class EventForm extends Component {
           value={instructor}
           onChange={this.handleChange}
         />
-
+{/* 
         <Form.Input 
           required
           placeholder='bernalesinstitute.com/events/____'
@@ -128,11 +128,11 @@ class EventForm extends Component {
           name='slug_link'
           value={slug_link}
           onChange={this.handleChange}
-        />
+        /> */}
 
         <Form.Button 
         color='green' 
-        >Submit
+        >Save
         </Form.Button>
         
       </Form>

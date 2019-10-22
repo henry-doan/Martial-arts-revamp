@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {InstructorConsumer} from '../../../providers/InstructorProvider';
 import { Form } from 'semantic-ui-react';
+import ReactQuill, { Quill, Mixin, Toolbar } from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 class InstructorForm extends Component {
   state = { first_name: '', last_name: '', specialty:'', years: '',
@@ -38,6 +40,7 @@ class InstructorForm extends Component {
   render() {
     const { first_name, last_name, specialty, years, image, experience, sm_facebook, sm_linkedin, sm_instagram, sm_youtube, bio} = this.state 
     return (
+<section style={{padding: '2em'}}>
       <Form onSubmit={this.handleSubmit}>
 
         <Form.Input 
@@ -76,6 +79,22 @@ class InstructorForm extends Component {
           onChange={this.handleChange}
         />
 
+        <ReactQuill 
+        theme="snow"
+        required
+        key="toolbar"
+        ref="toolbar"
+        placeholder='Instructor Story'
+        type='TextArea'
+        label='content'
+        name='bio'
+        value={bio}
+        onChange={this.handleContentChange}
+        style={{height:'500px', marginBottom:'4em'}}>
+      
+
+        </ReactQuill>  
+{/* 
         <Form.Input 
           required
           placeholder='Years Expierence ie: 2, 5, 10'
@@ -83,7 +102,7 @@ class InstructorForm extends Component {
           name='years'
           value={years}
           onChange={this.handleChange}
-        />
+        /> */}
 
         <Form.Input
           required
@@ -121,18 +140,19 @@ class InstructorForm extends Component {
           onChange={this.handleChange}
         />
 
-        <Form.Input 
+        {/* <Form.Input 
           required
           placeholder='Youtube Link'
           label='sm_youtube'
           name='sm_youtube'
           value={sm_youtube}
           onChange={this.handleChange}
-        />
+        /> */}
 
         <Form.Button color='green'>Submit</Form.Button>
         
       </Form>
+</section>
     )
   }
 }

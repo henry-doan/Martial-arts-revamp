@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form } from 'semantic-ui-react';
+import { Header, Form } from 'semantic-ui-react';
 import { ContactConsumer } from '../../../providers/ContactProvider';
 
 class ContactForm extends Component {
@@ -18,6 +18,8 @@ class ContactForm extends Component {
  render() {
    const { name, email, phone, interest, message } = this.state;
    return (
+<>
+<Header>Schedule A Free Workout</Header>
      <Form onSubmit={this.handleSubmit}>
        <Form.Input
          label="Name"
@@ -54,8 +56,9 @@ class ContactForm extends Component {
          value={message}
          onChange={this.handleChange}
        />
-       <Form.Button color="gray">Save</Form.Button>
+       <Form.Button color="red">Submit</Form.Button>
      </Form>
+     </>
    )
  }
 }
