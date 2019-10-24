@@ -15,7 +15,7 @@ class InstructorShow extends Component {
  toggleEdit = () => this.setState({ editing: !this.state.editing })
 
  render () {
-   const { id,first_name, last_name, specialty, years, experience, sm_facebook,
+   const { id,first_name, last_name, specialty, bio, years, experience, sm_facebook,
      sm_linkedin, sm_instagram, sm_youtube, addInstructor, updateInstructor, deleteInstructor } = this.props
    const { editing } = this.state
    return (
@@ -29,9 +29,6 @@ class InstructorShow extends Component {
                 <Modal trigger={<Button>Instructor Details</Button>} closeIcon>
                 <Modal.Content>
                 <Segment style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
             }}>
             {
                 editing ?
@@ -42,7 +39,9 @@ class InstructorShow extends Component {
                     />
                 :
                     <>
-                    <Header>{first_name}</Header>
+                    <Header>Name: {first_name}</Header>
+                    <Header>Focus: {specialty}</Header>
+                    <p>Bio: {bio}</p>
 
                     </>
             }
@@ -50,21 +49,17 @@ class InstructorShow extends Component {
             </Modal.Content>
 
             <Modal.Actions>
-            <Button icon color='blue' onClick={this.toggleEdit}>
-                        <Icon name="pencil" />
+            <Button icon onClick={this.toggleEdit}>
+                       Edit
                     </Button>
-                    <Button icon color='red' onClick={() => deleteInstructor(id)}>
-                        <Icon name="trash" />
-                    </Button>
+                    <Button color='red' onClick = {() => deleteInstructor(id)}>Delete</Button>
             </Modal.Actions>
 
                 </Modal>
-                    {/* <Button icon color='blue' onClick={this.toggleEdit}>
+                    {/* <Button icon color='blue' onClick={this.props.toggleEdit}>
                         <Icon name="pencil" />
-                    </Button>
-                    <Button icon color='red' onClick={() => deleteInstructor(id)}>
-                        <Icon name="trash" />
                     </Button> */}
+                    <Button color='red' onClick = {() => deleteInstructor(id)}>Delete</Button>
             </Table.Cell>
             </Table.Row>
 

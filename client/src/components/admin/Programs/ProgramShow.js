@@ -1,20 +1,27 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { Header, Segment, Button, Icon, Checkbox, Table, Modal } from 'semantic-ui-react';
 
 class ProgramShow extends Component {
   render(){
     const { id, title, description, image, gallery, featured_boolean, updateProgram, deleteProgram, history } = this.props
     return (
-      <div>
-        <h1>id: {id}<br />
-        Title: {title}<br /></h1>
-        Description: {description}<br />
-        <Link to={{
-          pathname: "/admin/programForm",
-          state: { id, title, description, image, gallery, featured_boolean, history }
-        }}>Edit Program</Link>
-        <button onClick = {() => deleteProgram(id)}>delete</button>
-      </div>
+    <>
+    <Table.Row>
+    <Table.Cell><h1>{id}</h1></Table.Cell>
+    <Table.Cell>{title}</Table.Cell>
+    <Table.Cell>{description}</Table.Cell>
+    <Table.Cell>
+    <Button >
+      <Link to={{
+      pathname: "/admin/programForm",
+      state: { id, title, description, image, gallery, featured_boolean, history }
+      }}>Edit Program</Link>
+    </Button>
+      <Button color='red' onClick = {() => deleteProgram(id)}>Delete</Button>
+    </Table.Cell>
+    </Table.Row>
+    </>
     )
   }
 }

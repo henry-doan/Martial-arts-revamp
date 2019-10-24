@@ -1,8 +1,9 @@
 import React, {useEffect, useContext, useState} from 'react';
-import { Header, Card, Image } from 'semantic-ui-react';
+import { Header, Card, Image, Grid} from 'semantic-ui-react';
 import { AboutContext } from '../../../providers/AboutProvider';
 import ConnectedAboutForm from './AboutForm';
 import Navbar from '../../Navbar';
+import {DashItem, DashText, DashPage, DashContent} from '../../styledComponents/DashboardStyles';
 
 const About = () => {
   const value = useContext(AboutContext);
@@ -10,9 +11,15 @@ const About = () => {
 
    return(
     <>
+    <DashPage>
       <Navbar />
+      <DashContent>
       <Header>About Admin Page</Header>
+      
+      <Card fluid>
       <ConnectedAboutForm />
+      </Card>
+
       <Card fluid>
         <Card.Content>
           <Card.Meta> <Image src={ title }/> </Card.Meta>
@@ -21,6 +28,9 @@ const About = () => {
           </Card.Meta>
         </Card.Content>
       </Card>
+
+      </DashContent>
+    </DashPage>
     </>
    )
 }

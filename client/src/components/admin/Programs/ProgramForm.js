@@ -1,20 +1,13 @@
 import React, {Component} from "react";
 import { Form, } from "semantic-ui-react";
 import { ProgramConsumer } from '../../../providers/ProgramProvider';
-
-
+import {DashItem, DashText, DashPage, DashContent} from '../../styledComponents/DashboardStyles';
+import Navbar from '../../Navbar';
 
 class ProgramForm extends React.Component {
   state = { title: "", description: "", image:"", featured_boolean: false, gallery:"" };
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value, });
-
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const program = { ...this.state, };
-  //   this.props.addProgram(program);
-  //   // this.props.updateProgram({program});
-  // }
 
   componentDidMount() {
      if (this.props.location.state) {
@@ -39,15 +32,20 @@ class ProgramForm extends React.Component {
   render() {
     const { title, description, image, gallery, featured_boolean } = this.state;
     return (
+      <>
+      <DashPage>
+        <Navbar />
+        <DashContent>
+<h1>Add Program</h1>
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
-          label="title"
+          label="Title"
           type="text"
           name="title"
           value={title}
           onChange={this.handleChange}
         />
-        <Form.Input
+        <Form.TextArea
           label="Description"
           name="description"
           value={description}
@@ -55,20 +53,13 @@ class ProgramForm extends React.Component {
           type="text"
         />
         <Form.Input
-          label="Image"
+          label="Image Link"
           name="image"
           value={image}
           onChange={this.handleChange}
           type="text"
         />
 
-        <Form.Input
-          label="gallery"
-          name="gallery"
-          value={gallery}
-          onChange={this.handleChange}
-          type="text"
-        />
         <Form.Input
           label="featured_boolean"
           name="featured_boolean"
@@ -80,6 +71,9 @@ class ProgramForm extends React.Component {
         <Form.Button color="blue">Save</Form.Button>
 
         </Form>
+        </DashContent>
+      </DashPage>
+        </>
       )
   }
 }

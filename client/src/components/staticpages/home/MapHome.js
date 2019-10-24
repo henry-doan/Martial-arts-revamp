@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapBack, MapCard } from '../../styledComponents/HomeMapStyles';
 import { Grid, Image, Card, Icon, Modal, Button } from 'semantic-ui-react';
-import ConnectedContactForm from '../../admin/contact/ContactForm'
+import ConnectedContactForm from '../../admin/contact/ContactForm';
 
 const MapHome = () => (
 <>

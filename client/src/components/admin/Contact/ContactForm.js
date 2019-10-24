@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header, Form } from 'semantic-ui-react';
+import { Header, Form, Modal } from 'semantic-ui-react';
 import { ContactConsumer } from '../../../providers/ContactProvider';
 
 class ContactForm extends Component {
@@ -27,7 +27,7 @@ class ContactForm extends Component {
       this.props.toggleEdit()
     } else {
       this.props.addContact(this.state)
-      this.props.history.push('/dashboard');
+      window.location.href = '/contact'
     }
     this.setState({ name: '', phone: '', email:'', interest: '',
     message: '',})
@@ -83,7 +83,7 @@ class ContactForm extends Component {
           onChange={this.handleChange}
         />
 
-        <Form.Button color='green'>Submit</Form.Button>
+        <Form.Button color='red'>Submit</Form.Button>
         
       </Form>
     )

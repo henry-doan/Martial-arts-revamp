@@ -22,6 +22,7 @@ class WalkinForm extends Component {
  render() {
    const { name, email, phone, interest, message } = this.state;
    return (
+     <>
      <Form onSubmit={this.handleSubmit}>
        <Form.Input
          label="Name"
@@ -60,6 +61,7 @@ class WalkinForm extends Component {
        />
        <Form.Button color="gray">Save</Form.Button>
      </Form>
+     </>
    )
  }
 }

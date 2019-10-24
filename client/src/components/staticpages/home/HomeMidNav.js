@@ -63,6 +63,13 @@ handleClose = () => this.setState({ active: false })
             onClick={this.handleItemClick}
             href='/about'
           />
+          <Menu.Item
+            name='Contact'
+            active={activeItem === '/contact'}
+            onClick={this.handleItemClick}
+            href='/contact'
+          />
+          
           </Menu.Menu>
         </Menu>
           </DesNavSec>

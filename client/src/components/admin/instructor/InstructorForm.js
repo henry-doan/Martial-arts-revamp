@@ -13,7 +13,7 @@ class InstructorForm extends Component {
     if (this.props.id) {
       this.setState({ first_name: this.props.first_name, last_name: this.props.last_name, 
         specialty: this.props.specialty, years: this.props.years, image: this.props.image, 
-        experience: this.props.experience, sm_facebook: this.props.sm_facebook, 
+        experience: this.props.experience, sm_facebook: this.props.sm_facebook, sm_twitter: this.props.sm_twitter,
         sm_linkedin: this.props.sm_linkedin, sm_instagram: this.props.sm_instagram, sm_youtube: this.props.sm_youtube, bio: this.props.bio,
       })
     }
@@ -34,11 +34,13 @@ class InstructorForm extends Component {
       this.props.history.push('/admin/instructor');
     }
     this.setState({ first_name: '', last_name: '', specialty:'', years: '',
-    experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '', sm_youtube: '', image: '', bio: ''})
+    experience: '', sm_facebook: '', sm_linkedin: '', sm_instagram: '',
+     sm_youtube: '', image: '', bio: '', sm_twitter: ''})
   }
 
   render() {
-    const { first_name, last_name, specialty, years, image, experience, sm_facebook, sm_linkedin, sm_instagram, sm_youtube, bio} = this.state 
+    const { first_name, last_name, specialty, years, image, experience, 
+      sm_facebook, sm_linkedin, sm_instagram, sm_youtube, bio, sm_twitter} = this.state 
     return (
 <section style={{padding: '2em'}}>
       <Form onSubmit={this.handleSubmit}>
@@ -46,7 +48,7 @@ class InstructorForm extends Component {
         <Form.Input 
           required
           placeholder='First Name'
-          label='first_name'
+          label='First Name'
           name='first_name'
           value={first_name}
           onChange={this.handleChange}
@@ -55,7 +57,7 @@ class InstructorForm extends Component {
         <Form.Input 
           required
           placeholder='Last Name'
-          label='last_name'
+          label='Last Name'
           name='last_name'
           value={last_name}
           onChange={this.handleChange}
@@ -64,7 +66,7 @@ class InstructorForm extends Component {
         <Form.Input 
           required
           placeholder='Instructor Specialty'
-          label='specialty'
+          label='Specialty'
           name='specialty'
           value={specialty}
           onChange={this.handleChange}
@@ -73,27 +75,32 @@ class InstructorForm extends Component {
         <Form.Input 
           required
           placeholder='Instructor Image'
-          label='image'
+          label='Image Link'
           name='image'
           value={image}
           onChange={this.handleChange}
         />
 
+        <Form.TextArea
+          required
+          placeholder='Instructor Story'
+          label='Biography'
+          name='bio'
+          value={bio}
+          onChange={this.handleChange}
+        />
+{/* 
         <ReactQuill 
         theme="snow"
         required
-        key="toolbar"
-        ref="toolbar"
         placeholder='Instructor Story'
         type='TextArea'
-        label='content'
+        label='bio'
         name='bio'
         value={bio}
-        onChange={this.handleContentChange}
+        onChange={this.handleChange}
         style={{height:'500px', marginBottom:'4em'}}>
-      
-
-        </ReactQuill>  
+        </ReactQuill>   */}
 {/* 
         <Form.Input 
           required
@@ -104,37 +111,35 @@ class InstructorForm extends Component {
           onChange={this.handleChange}
         /> */}
 
-        <Form.Input
+        {/* <Form.Input
           required
           placeholder='Bio'
           label='bio'
           name='bio'
           value={bio}
           onChange={this.handleChange}
-        />
+        /> */}
         
         <Form.Input 
-          required
+
           placeholder='Facebook Link'
-          label='sm_facebook'
+          label='Facebook'
           name='sm_facebook'
           value={sm_facebook}
           onChange={this.handleChange}
         />
 
         <Form.Input 
-          required
-          placeholder='Linkedin Link'
-          label='sm_linkedin'
+          placeholder='LinkedIn Link'
+          label='LinkedIn'
           name='sm_linkedin'
           value={sm_linkedin}
           onChange={this.handleChange}
         />
 
         <Form.Input 
-          required
           placeholder='Instagram Link'
-          label='sm_instagram'
+          label='Instagram'
           name='sm_instagram'
           value={sm_instagram}
           onChange={this.handleChange}
@@ -149,7 +154,7 @@ class InstructorForm extends Component {
           onChange={this.handleChange}
         /> */}
 
-        <Form.Button color='green'>Submit</Form.Button>
+        <Form.Button color='red'>Save</Form.Button>
         
       </Form>
 </section>

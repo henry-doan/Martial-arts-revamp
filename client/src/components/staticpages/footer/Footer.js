@@ -10,19 +10,19 @@ const Footer = () => (
         <Menu secondary fluid widths={8}>
 
           <Menu.Item>
-          <Link to="/Programs">Programs</Link>
+          <Link to="/programs">Programs</Link>
           </Menu.Item>
 
           <Menu.Item>
-          <Link to="/Events" >Events</Link>
+          <Link to="/instructors" >Instructors</Link>
           </Menu.Item>
 
           <Menu.Item>
-          <Link to="/About" >About Us</Link>
+          <Link to="/about" >About Us</Link>
           </Menu.Item>
 
           <Menu.Item>
-          <Link to="/Contact">Contact</Link>
+          <Link to="/contact">Contact</Link>
           </Menu.Item>
         </Menu>
 

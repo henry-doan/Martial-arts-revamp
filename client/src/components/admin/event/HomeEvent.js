@@ -38,19 +38,6 @@ const HomeEvent = () => {
                 }}
                  />
 
-
-            <Button
-                floated='right'
-                icon
-                color='white'
-                labelPosition='left'
-                primary
-                size='small'
-            >
-            <Icon name='calendar alternate outline' />
-            <Link to='/eventform' color='white'>Add Event</Link>
-            </Button>
-
                 </>
    )
 }

@@ -1,23 +1,28 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import Navbar from '../../Navbar';
+import { Header, Segment, Button, Icon, Checkbox, Table, Modal } from 'semantic-ui-react';
 
 class ContactShow extends Component {
   render(){
    const { id, name, email, phone, interest, notes, deleteContact, history } = this.props
    return (
-     <div>
-       <h1>{name}</h1>
-       <h3>{email}</h3>
-       <h3>{phone}</h3>
-       <h3>{interest}</h3>
-       <h3>{notes}</h3>
+     <>
+      <Table.Row>
+    <Table.Cell><h1>{name}</h1></Table.Cell>
+    <Table.Cell>{email}</Table.Cell>
+    <Table.Cell>{phone}</Table.Cell>
+    <Table.Cell>{interest}</Table.Cell>
+    <Table.Cell>
        <Link to={{
          pathname: "/contact",
          state: { id, name, email, phone, interest, notes, deleteContact, history }
        }}></Link>
+        <Button color='red' onClick = {() => deleteContact(id)}>delete</Button>
+    </Table.Cell>
 
-        <button onClick = {() => deleteContact(id)}>delete</button>
-     </div>
+        </Table.Row>
+     </>
    )
  }
 }
