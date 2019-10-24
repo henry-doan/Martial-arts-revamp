@@ -8,11 +8,7 @@ import {DashItem, DashText, DashPage, DashContent} from '../../styledComponents/
 
 const Instructor = () => {
 const value = useContext(InstructorContext);
-
-// useEffect( () => {
-// 	{value.getInstructor()}
-// },[]);
-
+	
 return (
 <>
 <DashPage>
