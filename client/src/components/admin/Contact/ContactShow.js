@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import Navbar from '../../Navbar';
-import { Header, Segment, Button, Icon, Checkbox, Table, Modal } from './node_modules/semantic-ui-react';
+import { Header, Segment, Button, Icon, Checkbox, Table, Modal } from 'semantic-ui-react';
 
 class ContactShow extends Component {
   render(){
