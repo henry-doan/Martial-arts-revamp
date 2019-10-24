@@ -1,13 +1,13 @@
-import React from './node_modules/react';
+import React from 'react';
 import { ProgramConsumer } from '../../../providers/ProgramProvider';
-import { Link } from './node_modules/react-router-dom';
+import { Link } from 'react-router-dom';
 import ProgramLandingShows from "./ProgramLandingShows";
 import style from './programLandingShows.css';
 import {ProgramImage, ProgramHeader} from '../../styledComponents/ProgramIndexStyles';
 import {PageContainer, PageWrap, Horizontal} from '../../styledComponents/HomeStyles';
 import Footer from '../../staticpages/footer/Footer';
 import PageNavbar from '../../staticpages/pagesnavbar/PageNavbar';
-import {Grid, Image, Button}  from './node_modules/semantic-ui-react';
+import {Grid, Image, Button}  from 'semantic-ui-react';
 import {Hero2Cover} from '../../styledComponents/Home2HeroStyles';
 
 
@@ -97,68 +97,3 @@ const ProgramLandingShow = ({programs, history}) => (
 )
 
 export default ProgramLandingShow;
-//
-// // |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
-
-// import React, { Component } from 'react';
-// import ReactDOM from 'react-dom';
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
-// import { Carousel } from 'react-responsive-carousel';
-// import { Grid, Image, Card, Icon, Menu, Segment } from 'semantic-ui-react';
-// import { ProgramConsumer } from '../../providers/ProgramProvider';
-// import './programLandingShows.css'
-//
-//
-// class ProgramView extends Component {
-//     state = { currentProgramIndex: 0}
-//
-//     onProgramChange = (newIndex) => this.setState({currentProgramIndex: newIndex});
-//
-//     renderProgramImages = () => {
-//       return this.props.featuredPro.map((program) => (
-//         <div key={program.id}>
-//           <img src={program.image} />
-//         </div>
-//       ))
-//     }
-//
-//     render() {
-//       const program = this.props.featuredPro[this.state.currentProgramIndex];
-//         return (
-//         <div>
-//           <div class="CarWrap">
-//             <Carousel onChange={this.onProgramChange} style={{margin: "0px"}} >
-//               {this.renderProgramImages()}
-//             </Carousel>
-//           </div>
-//
-//             <div>
-//             {/* <div style={{display: "flex", justifyContent: "flex-end", margin: "10px"}}> */}
-//               {/* <h1>Instructor {insructors[this.state.currentInstructor].name}</h1> */}
-//               <section class="instructorContent">
-//               <h1> {program && program.title}</h1>
-//               <p>{program && program.description}</p>
-//
-//               </section>
-//
-//             </div>
-//             </div>
-//         );
-//     }
-// };
-//
-// const ConnectedProgramView = (props) => {
-//   return (
-//     <ProgramConsumer>
-//       { value => (
-//         <ProgramView
-//           { ...props }
-//           featuredPro={value.featuredPro}
-//         />
-//       )}
-//     </ProgramConsumer>
-//   )
-// }
-//
-// export default ConnectedProgramView;
