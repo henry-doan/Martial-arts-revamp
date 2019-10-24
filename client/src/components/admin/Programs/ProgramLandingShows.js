@@ -1,8 +1,8 @@
-import React, { Component } from './node_modules/react';
-import { Link } from './node_modules/react-router-dom';
-import { Container } from './node_modules/semantic-ui-react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
 import {ProgramImage} from '../../styledComponents/ProgramIndexStyles';
-import {Grid, Image, Button, Header} from './node_modules/semantic-ui-react';
+import {Grid, Image, Button, Header} from 'semantic-ui-react';
 import {PageContainer, PageWrap} from '../../styledComponents/HomeStyles';
 import Footer from '../../staticpages/footer/Footer';
 
