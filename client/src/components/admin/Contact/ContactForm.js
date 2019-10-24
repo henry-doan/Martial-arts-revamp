@@ -1,5 +1,5 @@
-import React, { Component } from './node_modules/react';
-import { Header, Form, Modal } from './node_modules/semantic-ui-react';
+import React, { Component } from 'react';
+import { Header, Form, Modal } from 'semantic-ui-react';
 import { ContactConsumer } from '../../../providers/ContactProvider';
 
 class ContactForm extends Component {
