@@ -1,5 +1,27 @@
 {
-  "dependencies": {
-
-  }
+  "dependencies": {},
+  "name": "Martial-arts-revamp",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "cd client && npm install --only=dev && npm install && npm run build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "npm run build && npm run deploy && echo 'Client Built'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nightwing891/Martial-arts-revamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nightwing891/Martial-arts-revamp/issues"
+  },
+  "homepage": "https://github.com/nightwing891/Martial-arts-revamp#readme"
 }
