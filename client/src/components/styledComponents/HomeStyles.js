@@ -31,11 +31,6 @@ margin: 0em !important;
 padding: 0em !important;
 position: relative;
 height:auto;
-
-    @media (max-width: 767px){   
-        /* MOBILE OVERIDE */
-
-}
 `;
 
 export const PageWrap = styled.section`

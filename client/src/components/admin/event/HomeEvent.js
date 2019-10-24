@@ -27,18 +27,18 @@ const HomeEvent = () => {
      }, [value.events])
 
    return (
-        <>
-                <HomeEventModal open={modalEvent} setModalEvent={setModalEvent} {...modalShowEvent} />
-                <Moment
-                events={formatEvent()}
-                onSelectSlot={({s,e}) => console.log(s,e)}
-                onSelectEvent={(event) => {
-                setModalShowEvent(event);
-                setModalEvent(true);
-                }}
-                 />
+   <>
+   <HomeEventModal open={modalEvent} setModalEvent={setModalEvent} {...modalShowEvent} />
+   <Moment
+   events={formatEvent()}
+   onSelectSlot={({s,e}) => console.log(s,e)}
+   onSelectEvent={(event) => {
+   setModalShowEvent(event);
+   setModalEvent(true);
+   }}
+   />
 
-                </>
+   </>
    )
 }
 

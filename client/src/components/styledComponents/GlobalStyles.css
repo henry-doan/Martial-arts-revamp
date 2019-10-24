@@ -1,6 +1,3 @@
-/* body{
-    background-color: #1c1c1c;
-} */
 
 .ui.borderless.inverted.menu{
     border-radius:0;
@@ -24,42 +21,49 @@ margin-right: 0em !important;
 }
 
 .ui.red.button{
-    /* background-color:#660000 !important; */
     background:linear-gradient(45deg, #660000, #880001) !important;
 }
 
-/* CALENDAR FUNCTIONS GLOBAL */
-.rbc-calendar{
-    margin: 2em;
-    position: relative;
-    /* left: 50%;
-    -ms-transform: translate( -50%);
-    transform: translate( -50%); */
+.FooterLink a{
+    color:white;
+    text-transform: uppercase;
+    font-size: .8em;
+    letter-spacing: 2px;
+    display: inline-block;
 }
 
-.rbc-toolbar button:active, .rbc-toolbar button.rbc-active {
+.FooterLink a:hover{
+    color:#660000;
+}
+
+/* CALENDAR FUNCTIONS GLOBAL */
+.HomeEvent .rbc-calendar{
+    margin: 2em;
+    position: relative;
+}
+
+.HomeEvent .rbc-toolbar button:active, .rbc-toolbar button.rbc-active {
     background-color:#353635 !important;
 }
 
 
-.rbc-toolbar button{
+.HomeEvent .rbc-toolbar button{
 color:white !important;
 }
 
-.rbc-day-bg.rbc-off-range-bg{
+.HomeEvent .rbc-day-bg.rbc-off-range-bg{
     background-color: #212121;
 }
 
-.rbc-event, .rbc-event-allday{
-    /* background-color:#660000 !important; */
+.HomeEvent .rbc-event, .rbc-event-allday{
     background:linear-gradient(45deg, #660000, #880001) !important;
 }
 
-.rbc-today{
+.HomeEvent .rbc-today{
     background-color: #353635!important;
 }
 
-.rbc-calendar{
+.HomeEvent .rbc-calendar{
     color: white;
 }
 
@@ -67,11 +71,16 @@ color:white !important;
 
 .PButton{
 position: absolute;
+color:white;
 z-index: 888;
 bottom: 30%;
 left:50%;
 -ms-transform: translate(-50%, -50%);
 transform: translate(-50%, -50%);
+
+}
+.PButton a{
+color:white;
 }
 
 .ui.red.button.PButton a:hover{
@@ -96,3 +105,27 @@ width:65%;
 margin: auto;
 margin-bottom: 1em;
 }
+
+.facebook:hover{
+    background: linear-gradient(45deg, #1B65EB,#1BDBF8 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.instagram:hover {
+    background: linear-gradient(45deg, #FCB845, #FD2246 ,#5538E8 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+.icon.map:hover {
+    background: linear-gradient(45deg, rgb(27, 223, 66), rgb(105, 233, 13) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .twitter:hover {
+    background: linear-gradient(45deg, #1DA1F2,#34AAF2 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }

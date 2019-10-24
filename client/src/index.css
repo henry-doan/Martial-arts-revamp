@@ -11,17 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-/* @media only screen and (max-width: 769px) {
-  .desktopOnly{
-    display: none; 
-   background: url(./components/staticpages/assets/images/poster.jpeg);
-   min-height: 100vh; 
-  }
-}
-
-
-.text-white {
-  color: white !important;
-  text-align: center;
-}  */

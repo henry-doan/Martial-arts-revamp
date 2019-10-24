@@ -34,55 +34,47 @@ class EventModal extends Component {
    const { editing } = this.state
    return (
        <>
-                <Modal open={open} onClose={() => setModalEvent(false)} closeIcon>
-                <Modal.Content>
-                <Segment style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-            }}>
-            {
-                editing ?
-                    <ConnectedEventForm
-                    { ...this.props }
-                    id={id}
-                    updateEvent={ this.props.update }
-                    toggleEdit={this.toggleEdit}
-                    />
-                :
-                    <>
-                    <Header>{title}</Header>
-                    <p>{moment(start_date).format("MM/DD/YY")}</p>
-                    <p>{moment(end_date).format("MM/DD/YY")}</p>
-                    <p>{start_time}</p>
-                    <p>{end_time}</p>
-                    <p>{description}</p>
-                    <p>{instructor}</p>
-                    <p>{flyer}</p>
-                    </>
-            }
-            </Segment>
-            </Modal.Content>
+      <Modal open={open} onClose={() => setModalEvent(false)} closeIcon>
+      <Modal.Content>
+      <Segment style={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between'
+      }}>
+      {
+      editing ?
+      <ConnectedEventForm
+      { ...this.props }
+      id={id}
+      updateEvent={ this.props.update }
+      toggleEdit={this.toggleEdit}
+      />
+      :
+      <>
+      <Header>{title}</Header>
+      <p>{moment(start_date).format("MM/DD/YY")}</p>
+      <p>{moment(end_date).format("MM/DD/YY")}</p>
+      <p>{start_time}</p>
+      <p>{end_time}</p>
+      <p>{description}</p>
+      <p>{instructor}</p>
+      <p>{flyer}</p>
+      </>
+      }
+      </Segment>
+      </Modal.Content>
 
-            <Modal.Content>
-            <Button icon color='blue' onClick={this.toggleEdit}>
-                        <Icon name="pencil" />
-                    </Button>
-                    <Button icon color='red' onClick={() => this.handleDelete()}>
-                        <Icon name="trash" />
-                    </Button>
-            </Modal.Content>
+      <Modal.Content>
+      <Button icon color='blue' onClick={this.toggleEdit}>
+                  <Icon name="pencil" />
+              </Button>
+              <Button icon color='red' onClick={() => this.handleDelete()}>
+                  <Icon name="trash" />
+              </Button>
+      </Modal.Content>
 
-            <Modal.Actions>
-            {/* <Button color='red'>
-            <Icon name='remove' /> Cancel
-            </Button>
-            <Button color='green'>
-            <Icon name='checkmark' /> Yes
-            </Button> */}
-            </Modal.Actions>
 
-                </Modal>
+          </Modal>
 
     </>
    )

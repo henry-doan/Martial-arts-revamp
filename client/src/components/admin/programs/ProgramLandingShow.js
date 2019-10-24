@@ -2,7 +2,6 @@ import React from 'react';
 import { ProgramConsumer } from '../../../providers/ProgramProvider';
 import { Link } from 'react-router-dom';
 import ProgramLandingShows from "./ProgramLandingShows";
-import style from './programLandingShows.css';
 import {ProgramImage, ProgramHeader} from '../../styledComponents/ProgramIndexStyles';
 import {PageContainer, PageWrap, Horizontal} from '../../styledComponents/HomeStyles';
 import Footer from '../../staticpages/footer/Footer';

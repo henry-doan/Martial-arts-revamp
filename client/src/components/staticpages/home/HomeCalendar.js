@@ -6,7 +6,7 @@ import HomeEvent from '../../admin/event/HomeEvent';
 
 const HomeCalendar = () => (
 <>
-<HomeEventWrapper>
+<HomeEventWrapper className='HomeEvent'>
 <HomeEvent />
 </HomeEventWrapper>
 </>

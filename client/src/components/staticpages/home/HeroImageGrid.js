@@ -10,20 +10,20 @@ const HomeImageGrid = () => (
     <>
     <HeroLowerImage>
     <Grid columns={4} stretched doubling>
-        <Grid.Row>
-            <Grid.Column >
-            <HeroImageItem src={home1}/>
-            </Grid.Column>
-            <Grid.Column >
-            <HeroImageItem src={home2}/>
-            </Grid.Column>
-            <Grid.Column >
-            <HeroImageItem src={home3}/>
-            </Grid.Column>
-            <Grid.Column >
-            <HeroImageItem src={home4}/>
-            </Grid.Column>
-        </Grid.Row>
+			<Grid.Row>
+				<Grid.Column >
+				<HeroImageItem src={home1}/>
+				</Grid.Column>
+				<Grid.Column >
+				<HeroImageItem src={home2}/>
+				</Grid.Column>
+				<Grid.Column >
+				<HeroImageItem src={home3}/>
+				</Grid.Column>
+				<Grid.Column >
+				<HeroImageItem src={home4}/>
+				</Grid.Column>
+			</Grid.Row>
     </Grid>
     </HeroLowerImage>
     </>

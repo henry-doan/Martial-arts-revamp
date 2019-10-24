@@ -1,11 +1,20 @@
 import React, {Component} from 'react';
-import { Menu, Image, Sticky, Ref} from 'semantic-ui-react';
+import { Menu, Image, Dimmer, Button} from 'semantic-ui-react';
 import { Link, withRouter, } from 'react-router-dom';
 import LogoDark from '../assets/images/bima-black-white.png';
-import {HomeTopNavSec, HomeTopNavLink, HomeTopNavList, HomeTopNavItem, HomeTopNavItemRight} from '../../styledComponents/HomeTopNavStyles'
+import LogoLight  from '../assets/images/bima-white-black.png'
+import {MobNavSec} from '../../styledComponents/PageNavbar';
+import {HomeTopNavSec} from '../../styledComponents/HomeTopNavStyles'
 
 class HomeTopNav extends Component {
+	state = {}
+
+	handleOpen = () => this.setState({ active: true })
+	handleClose = () => this.setState({ active: false })
+
 		render() {
+			const { activeItem } = this.state
+			const { active } = this.state
 			return (
 	<>
 	
@@ -16,7 +25,7 @@ class HomeTopNav extends Component {
 		</Menu.Item>
 		<Menu.Menu position='right'>
 		<Menu.Item
-		name='801-463-1727'
+		name='TRAIN NOW'
 		onClick={this.handleItemClick}
 		href='/contact'
 		/>
@@ -24,18 +33,44 @@ class HomeTopNav extends Component {
 	</Menu>
 </HomeTopNavSec>
 
-	{/* <HomeTopNavList>
+<MobNavSec>
+    <Menu  inverted borderless>
+        <Menu.Item header>
+        <Link to='/'><Image size='tiny' src={LogoDark}/></Link>
+        </Menu.Item>
 
-		<HomeTopNavItem>
-				<Link to='/'><Image size='small' src={LogoDark}/></Link>
-		</HomeTopNavItem>
+        <Menu.Menu position='right'>
+            <Menu.Item>
+                <Button icon='bars' inverted onClick={this.handleOpen}/>
+            </Menu.Item>
+        </Menu.Menu>
+    </Menu>
 
-		<HomeTopNavItemRight>
-				<HomeTopNavLink href='/'>801-463-1727</HomeTopNavLink>
-		</HomeTopNavItemRight>
-		
-	</HomeTopNavList> */}
+</MobNavSec>
 
+
+        <Dimmer active={active} onClickOutside={this.handleClose} page>
+       
+           <Menu vertical inverted borderless>
+               <Menu.Item header>
+          <Link to='/'><Image size='large' centered src={LogoLight}/></Link>
+               </Menu.Item>
+               <Menu.Item>
+          <Link to='/programs'>Programs</Link>
+               </Menu.Item>
+               <Menu.Item>
+          <Link to='/instructors'>Instructors</Link>
+               </Menu.Item>
+               <Menu.Item>
+          <Link to='/about'>About</Link>
+               </Menu.Item>
+               <Menu.Item>
+          <Link to='/contact'>Contact</Link>
+               </Menu.Item>
+           </Menu>
+           <Button icon='times' inverted onClick={this.handleClose}/>
+        </Dimmer>
+          
 	</>
 
 			)

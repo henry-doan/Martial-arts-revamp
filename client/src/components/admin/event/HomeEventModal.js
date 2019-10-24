@@ -33,23 +33,22 @@ class HomeEventModal extends Component {
      description, instructor, flyer, open, setModalEvent,addEvent, updateEvent, deleteEvent } = this.props
    const { editing } = this.state
    return (
-       <>
-                <Modal open={open} onClose={() => setModalEvent(false)} closeIcon>
-                <Modal.Content>
+      <>
+      <Modal open={open} onClose={() => setModalEvent(false)} closeIcon>
+      <Modal.Content>
 
-                    <Image src={flyer} />
-               
-                    <Header>{title}</Header>
-                    <p>{moment(start_date).format("MM/DD/YY")} - {moment(end_date).format("MM/DD/YY")}</p>
-                    <p>{start_time} - {end_time}</p>
-                    <p>Event Info:</p>
-                    <p>{description}</p>
-                    <p>Led by:</p>
-                    <p>{instructor}</p>
+      <Image src={flyer} />
 
-            </Modal.Content>
-                </Modal>
+      <Header>{title}</Header>
+      <p>{moment(start_date).format("MM/DD/YY")} - {moment(end_date).format("MM/DD/YY")}</p>
+      <p>{start_time} - {end_time}</p>
+      <p>Event Info:</p>
+      <p>{description}</p>
+      <p>Led by:</p>
+      <p>{instructor}</p>
 
+      </Modal.Content>
+      </Modal>
     </>
    )
  }

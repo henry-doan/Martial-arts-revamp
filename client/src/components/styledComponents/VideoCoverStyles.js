@@ -26,6 +26,17 @@ export const VideoCoverHero = styled.section`
 }
 `;
 
+export const VideoCoverLogo = styled.img`
+
+ @media (max-width: 769px) {
+width:100%;
+}
+
+@media (min-width: 769px) {   
+width:100%
+}
+`;
+
 export const HeroText = styled.h1`
     @media (max-width: 769px) {
         font-size: 2rem;

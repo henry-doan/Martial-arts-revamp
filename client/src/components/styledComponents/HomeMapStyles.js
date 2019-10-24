@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import mapBG from '../../components/staticpages/assets/images/mapbg.jpg';
-import mapBGIcon from '../../components/staticpages/assets/images/mapbg-icon.jpg';
 
 export const MapBack = styled.section`
 border: 1px solid #000;
 background-image: url(${mapBG});
-/* background-image: url(${mapBGIcon}); */
 background-attachment: fixed;
 background-repeat: no-repeat;
 background-size: cover;

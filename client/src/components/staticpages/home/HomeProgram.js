@@ -5,7 +5,7 @@ import {Grid, Image, Button} from 'semantic-ui-react';
 import { ProgramConsumer } from '../../../providers/ProgramProvider';
 import { Link } from 'react-router-dom';
 import { HeroProgramSection, HeroProgramImage,
-     ProgramWrap, ProgramWrapH3, PButton} from '../../styledComponents/HomeProgramStyles';
+     ProgramWrap, ProgramWrapH3, HeroProgramImageSec} from '../../styledComponents/HomeProgramStyles';
 
 const HomeImageGrid = () => (
     <>
@@ -16,8 +16,12 @@ const HomeImageGrid = () => (
     <Grid columns={4} doubling stretched>
         <Grid.Row>
         <Grid.Column>
+            <Link to={{
+                  pathname: `/programshow/${value.featuredPro[0] && value.featuredPro[0].id}`,
+                  state: { program: value.featuredPro[0] && value.featuredPro[0] }
+                }}>
             <ProgramWrap>
-                <HeroProgramImage src={ value.featuredPro[0] && value.featuredPro[0].image } />
+                <HeroProgramImageSec style={{background:`url(${value.featuredPro[0] && value.featuredPro[0].image})` }}></HeroProgramImageSec>
                 <ProgramWrapH3>{value.featuredPro[0] && value.featuredPro[0].title}</ProgramWrapH3>
                 <Button color='red' className='PButton'>
                 <Link to={{
@@ -26,10 +30,15 @@ const HomeImageGrid = () => (
                 }}>INFO</Link>
                 </Button>
             </ProgramWrap>
+            </Link>
         </Grid.Column>
             <Grid.Column>
+            <Link to={{
+                  pathname: `/programshow/${value.featuredPro[1] && value.featuredPro[1].id}`,
+                  state: { program: value.featuredPro[1] && value.featuredPro[1] }
+                }}>
             <ProgramWrap>
-                <HeroProgramImage src={ value.featuredPro[1] && value.featuredPro[1].image } />
+            <HeroProgramImageSec style={{background:`url(${value.featuredPro[1] && value.featuredPro[1].image})` }}></HeroProgramImageSec>
                 <ProgramWrapH3>{value.featuredPro[1] && value.featuredPro[1].title}</ProgramWrapH3>
                 <Button color='red' className='PButton'>
                 <Link to={{
@@ -38,11 +47,16 @@ const HomeImageGrid = () => (
                 }}>INFO</Link>
                 </Button>
             </ProgramWrap>
+            </Link>
             </Grid.Column>
 
             <Grid.Column>
+            <Link to={{
+                  pathname: `/programshow/${value.featuredPro[2] && value.featuredPro[2].id}`,
+                  state: { program: value.featuredPro[2] && value.featuredPro[2] }
+                }}>
             <ProgramWrap>
-                <HeroProgramImage src={ value.featuredPro[2] && value.featuredPro[2].image } />
+            <HeroProgramImageSec style={{background:`url(${value.featuredPro[2] && value.featuredPro[2].image})` }}></HeroProgramImageSec>
                 <ProgramWrapH3>{value.featuredPro[2] && value.featuredPro[2].title}</ProgramWrapH3>
                 <Button color='red' className='PButton'>
                 <Link to={{
@@ -51,11 +65,16 @@ const HomeImageGrid = () => (
                 }}>INFO</Link>
                 </Button>
             </ProgramWrap>
+            </Link>
             </Grid.Column>
 
             <Grid.Column>
+            <Link to={{
+                  pathname: `/programshow/${value.featuredPro[3] &&  value.featuredPro[3].id}`,
+                  state: { program: value.featuredPro[3] &&  value.featuredPro[3] }
+                }}>
             <ProgramWrap>
-                <HeroProgramImage src={ value.featuredPro[3] &&  value.featuredPro[3].image } />
+            <HeroProgramImageSec style={{background:`url(${value.featuredPro[3] && value.featuredPro[3].image})` }}></HeroProgramImageSec>
                 <ProgramWrapH3>{value.featuredPro[3] &&  value.featuredPro[3].title}</ProgramWrapH3>
                 <Button color='red' className='PButton'>
                 <Link to={{
@@ -64,6 +83,7 @@ const HomeImageGrid = () => (
                 }}>INFO</Link>
                 </Button>
             </ProgramWrap>
+            </Link>
             </Grid.Column>
         </Grid.Row>
     </Grid>

@@ -32,11 +32,6 @@ const Dashboard = () => (
                 </DashItem>
                 </Grid.Column>
 
-
-            {/* </Grid.Row>
-
-            <Grid.Row> */}
-
                 <Grid.Column>
                 <DashItem style={{background:'green'}}>
                 <DashText href='/admin/about'>About</DashText>
@@ -51,7 +46,7 @@ const Dashboard = () => (
 
                 <Grid.Column>
                 <DashItem style={{background:'teal'}}>
-                <DashText href='/admin/walkin'>Walkin</DashText>
+                <DashText href='/'>Home</DashText>
                 </DashItem>
                 </Grid.Column>
 
