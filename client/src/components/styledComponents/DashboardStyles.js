@@ -11,7 +11,6 @@ position: relative;
 export const DashText = styled.a`
 position: absolute;
 font-size:1.5em;
-/* text-align:center; */
 top:50%;
 left: 50%;
 -ms-transform: translate(-50%, -50%);

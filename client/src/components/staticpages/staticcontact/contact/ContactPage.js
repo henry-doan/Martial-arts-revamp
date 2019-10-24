@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
-import bima from '../../assets/images/bima.jpg'
-import { Grid, Image, Card, Icon, Modal } from 'semantic-ui-react';
+import { Grid, Card, Icon, Modal } from 'semantic-ui-react';
 import PageNavbar from '../../pagesnavbar/PageNavbar';
 import Footer from '../../footer/Footer';
 import {ModalContact} from '../../../styledComponents/ContactStyles';
 import {BimaCover, Hero2CoverH2} from '../../../styledComponents/Home2HeroStyles';
 import ConnectedContactForm from '../../../admin/contact/ContactForm';
-import {HomeContainer, PageContainer, PageWrap, Horizontal} from '../../../styledComponents/HomeStyles';
+import { PageContainer, PageWrap, Horizontal} from '../../../styledComponents/HomeStyles';
 
-// import Iframe from './Iframe';
 class ContactPage extends Component {
   render() {
     const {ContactPage} = this.props
- 
     return (
       <>
       <PageNavbar />
@@ -20,7 +17,7 @@ class ContactPage extends Component {
 
       <Modal trigger={
         <ModalContact>
-          <Icon name='bolt'/>
+          <Icon name='mail' size='big'/>
         </ModalContact>
       } closeIcon>
 <Modal.Content>
@@ -67,7 +64,6 @@ We value your call and will get back to you promptly.
 Email us for info @ bernalesinstitute.com
 <br />
 <br />
-<Image src={bima} />
 </Grid.Column>
 </Grid.Row>
 </Grid>

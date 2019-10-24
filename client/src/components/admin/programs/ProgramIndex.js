@@ -25,17 +25,15 @@ const ProgramIndex = ({programs, updateProgram, deleteProgram, addProgram, histo
   <ProgramConsumer>
 
         { value => (
-            <>
-            { value.programs.map(program =>
-                <ProgramShow
-                  {...program}
-                  updateProgram={value.updateProgram}
-                  deleteProgram={value.deleteProgram}
-                  />
-
-              )}
-
-              </>
+			<>
+				{ value.programs.map(program =>
+				<ProgramShow
+				{...program}
+				updateProgram={value.updateProgram}
+				deleteProgram={value.deleteProgram}
+				/>
+				)}
+			</>
         )}
     </ProgramConsumer>
     </Table.Body>

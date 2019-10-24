@@ -15,48 +15,37 @@ const InstructorIndex = () => {
   const value = useContext(InstructorContext);
   const [currentInstructor, setCurrentInstructor] = useState(value.instructors[0]); 
   
-  // useEffect( () => {
-  //   {value.getInstructor()}
-  // },[]);
-  
   return (
   <>
-  <PageNavbar />
-  <PageContainer>
-  <PageWrap>
+    <PageNavbar />
+    <PageContainer>
+    <PageWrap>
 
-<Grid columns={2} doubling>
-  <Grid.Row>
-    <Grid.Column>
-    <ConnectedInstructorHero {...currentInstructor}/>
-    </Grid.Column>
+      <Grid columns={2} doubling>
+      <Grid.Row>
+      <Grid.Column>
+      <ConnectedInstructorHero {...currentInstructor}/>
+      </Grid.Column>
 
-    <Grid.Column>
-    { value.instructors.map(instructor =>
-  <>
+      <Grid.Column>
+      { value.instructors.map(instructor =>
+      <>
+      <InstructorImageSecDesk 
+      key={instructor.id} > 
+      <InstructorImage src={instructor.image} onClick={() => setCurrentInstructor(instructor)} />
+      </InstructorImageSecDesk>
 
-  <InstructorImageSecDesk 
-  key={instructor.id} > 
-  <InstructorImage src={instructor.image} onClick={() => setCurrentInstructor(instructor)} />
-  </InstructorImageSecDesk>
+      </>
+      )} 
 
-  </>
-)} 
+      <ConnectedInstructorPage {...currentInstructor}/>
+      </Grid.Column>
+      </Grid.Row>
+      </Grid>
 
-<ConnectedInstructorPage {...currentInstructor}/>
-    </Grid.Column>
-  </Grid.Row>
-</Grid>
-
-    
-
-
-
-  </PageWrap>
-
-</PageContainer>
-  <Footer />
-  
+    </PageWrap>
+    </PageContainer>
+    <Footer />
     </>
   )
   }

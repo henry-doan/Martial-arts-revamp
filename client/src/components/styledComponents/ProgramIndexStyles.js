@@ -13,10 +13,6 @@ export const HeroProgramSection = styled.section`
   @media (max-width: 769px) {
   .ui.grid > .row > .column {
   padding: 0 !important;
-  /* margin: 0 !important;
-  width: 100%;
-  position: relative;
-  z-index: 1;  */
   }
 }
 `;
@@ -67,7 +63,6 @@ transform: translate(-50%, -50%);
 `;
 
 export const ProgramImage = styled.img`
-  /* height:155px; */
   position: relative;
   width:100%;
   margin: 1px;

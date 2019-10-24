@@ -8,9 +8,6 @@ class InstructorShow extends Component {
 
  state = { editing: false }
 
-//  componentDidMount(){
-//      console.log(this.props)
-//  }
 
  toggleEdit = () => this.setState({ editing: !this.state.editing })
 
@@ -56,9 +53,6 @@ class InstructorShow extends Component {
             </Modal.Actions>
 
                 </Modal>
-                    {/* <Button icon color='blue' onClick={this.props.toggleEdit}>
-                        <Icon name="pencil" />
-                    </Button> */}
                     <Button color='red' onClick = {() => deleteInstructor(id)}>Delete</Button>
             </Table.Cell>
             </Table.Row>

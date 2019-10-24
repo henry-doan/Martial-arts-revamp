@@ -23,59 +23,59 @@ class EventShow extends Component {
    const { editing } = this.state
    return (
        <>
-            <Table.Row>
-                <Table.Cell><h1>{title}</h1></Table.Cell>
-                <Table.Cell>{moment(start_date).format("MM/DD/YY")}</Table.Cell>
-                <Table.Cell>{instructor}</Table.Cell>
+    <Table.Row>
+        <Table.Cell><h1>{title}</h1></Table.Cell>
+        <Table.Cell>{moment(start_date).format("MM/DD/YY")}</Table.Cell>
+        <Table.Cell>{instructor}</Table.Cell>
 
-                <Table.Cell>
-                <Modal trigger={<Button>Event Details</Button>} closeIcon>
-                <Modal.Content>
-                <Segment style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-            }}>
-            {
-                editing ?
-                    <ConnectedEventForm
-                    { ...this.props }
-                    updateEvent={ this.props.update }
-                    toggleEdit={this.toggleEdit}
-                    />
-                :
-                    <>
-                    <Header>{title}</Header>
-                    <p>{moment(start_date).format("MM/DD/YY")}</p>
-                    <p>{moment(end_date).format("MM/DD/YY")}</p>
-                    <p>{start_time}</p>
-                    <p>{end_time}</p>
-                    <p>{description}</p>
-                    <p>{instructor}</p>
-                    <p>{flyer}</p>
-                    </>
-            }
-            </Segment>
-            </Modal.Content>
+        <Table.Cell>
+        <Modal trigger={<Button>Event Details</Button>} closeIcon>
+        <Modal.Content>
+        <Segment style={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+    }}>
+    {
+        editing ?
+            <ConnectedEventForm
+            { ...this.props }
+            updateEvent={ this.props.update }
+            toggleEdit={this.toggleEdit}
+            />
+        :
+            <>
+            <Header>{title}</Header>
+            <p>{moment(start_date).format("MM/DD/YY")}</p>
+            <p>{moment(end_date).format("MM/DD/YY")}</p>
+            <p>{start_time}</p>
+            <p>{end_time}</p>
+            <p>{description}</p>
+            <p>{instructor}</p>
+            <p>{flyer}</p>
+            </>
+    }
+    </Segment>
+    </Modal.Content>
 
-            <Modal.Actions>
-            <Button color='red'>
-            <Icon name='remove' /> Cancel
+    <Modal.Actions>
+    <Button color='red'>
+    <Icon name='remove' /> Cancel
+    </Button>
+    <Button color='green'>
+    <Icon name='checkmark' /> Yes
+    </Button>
+    </Modal.Actions>
+
+        </Modal>
+            <Button icon color='blue' onClick={this.toggleEdit}>
+                <Icon name="pencil" />
             </Button>
-            <Button color='green'>
-            <Icon name='checkmark' /> Yes
+            <Button icon color='red' onClick={() => deleteEvent(id)}>
+                <Icon name="trash" />
             </Button>
-            </Modal.Actions>
-
-                </Modal>
-                    <Button icon color='blue' onClick={this.toggleEdit}>
-                        <Icon name="pencil" />
-                    </Button>
-                    <Button icon color='red' onClick={() => deleteEvent(id)}>
-                        <Icon name="trash" />
-                    </Button>
-            </Table.Cell>
-            </Table.Row>
+    </Table.Cell>
+    </Table.Row>
 
     </>
    )
@@ -89,16 +89,6 @@ const ConnectedEventShow = (props) => {
           <EventShow
             { ...props }
             { ...value }
-            // start_date={value.start_date}
-            // start_time={value.start_time}
-            // end_date={value.end_time}
-            // title={value.title}
-            // description={value.description}
-            // slug_link={value.slug_link}
-            // flyer={value.flyer}
-            // instructor={value.instructor}
-            // addEvent={value.addEvent}
-            // updateEvent={value.updateEvent}
           />
         )}
       </EventConsumer>

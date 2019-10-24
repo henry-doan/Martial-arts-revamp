@@ -89,37 +89,7 @@ class InstructorForm extends Component {
           value={bio}
           onChange={this.handleChange}
         />
-{/* 
-        <ReactQuill 
-        theme="snow"
-        required
-        placeholder='Instructor Story'
-        type='TextArea'
-        label='bio'
-        name='bio'
-        value={bio}
-        onChange={this.handleChange}
-        style={{height:'500px', marginBottom:'4em'}}>
-        </ReactQuill>   */}
-{/* 
-        <Form.Input 
-          required
-          placeholder='Years Expierence ie: 2, 5, 10'
-          label='years'
-          name='years'
-          value={years}
-          onChange={this.handleChange}
-        /> */}
 
-        {/* <Form.Input
-          required
-          placeholder='Bio'
-          label='bio'
-          name='bio'
-          value={bio}
-          onChange={this.handleChange}
-        /> */}
-        
         <Form.Input 
 
           placeholder='Facebook Link'

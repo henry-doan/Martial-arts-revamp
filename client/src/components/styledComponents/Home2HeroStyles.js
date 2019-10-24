@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Hero2 from '../staticpages/assets/images/hero2.jpeg'
+import Hero2 from '../staticpages/assets/images/team.jpg'
 import Bima from '../staticpages/assets/images/bima.jpg'
 
 export const Hero2Cover = styled.section`
@@ -28,7 +28,6 @@ min-height: 70vh;
 `;
 
 export const Hero2CoverH2 = styled.h2`
-/* text-align: center; */
 font-size: 2rem;
 color:white;
 margin: 0;
@@ -39,8 +38,9 @@ left: 50%;
 -ms-transform: translate(-50%, -50%);
 transform: translate(-50%, -50%);
 text-shadow: 0px 0px 8px #000;
+
 @media (max-width: 769px) {
-    display:none;
+display:none;
 }
 `
 

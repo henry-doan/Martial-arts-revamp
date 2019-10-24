@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Tab, Button, Icon, Grid, Image, Card } from 'semantic-ui-react';
+import { Icon, Grid, } from 'semantic-ui-react';
 import { InstructorConsumer } from '../../../providers/InstructorProvider';
 
 class InstructorPage extends Component {

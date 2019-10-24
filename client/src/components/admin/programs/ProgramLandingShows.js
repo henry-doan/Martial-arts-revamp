@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 import {ProgramImage} from '../../styledComponents/ProgramIndexStyles';
 import {Grid, Image, Button, Header} from 'semantic-ui-react';
-import {PageContainer, PageWrap} from '../../styledComponents/HomeStyles';
+import {PageContainer, PageWrap, Horizontal} from '../../styledComponents/HomeStyles';
 import Footer from '../../staticpages/footer/Footer';
 
 import PageNavbar from '../../staticpages/pagesnavbar/PageNavbar';
@@ -13,31 +13,32 @@ class ProgramLandingShows extends Component {
     const { id, title, description, image, gallery, featured_boolean, body } = this.props.location.state.program
     return (
     <>
-      <PageNavbar/>
-        <PageContainer>
-          <PageWrap>
-          {/* <h1>{ title }</h1> */}
-            <Grid columns={2} doubling>
-              <Grid.Row>
-                <Grid.Column>
-                  <Image src={image}/>
-                </Grid.Column>
+  <PageNavbar/>
+  <PageContainer>
+  <PageWrap>
+  <Grid columns={2} doubling>
+  <Grid.Row>
+  <Grid.Column>
+  <Image src={image}/>
+  </Grid.Column>
 
-                <Grid.Column>
-                <p>{ description }</p>
-                <h1>{ title }</h1>
-                </Grid.Column>
+  <Grid.Column>
+  <p>{ description }</p>
+  <h1>{ title }</h1>
+  </Grid.Column>
 
-              </Grid.Row>
-            </Grid>
+  </Grid.Row>
+  </Grid>
 
-{/* <Button>
-      <Link to='/programs'>All Programs</Link>
-</Button> */}
+  <Horizontal />
 
-          </PageWrap>
-        </PageContainer>
-      <Footer/>
+  <Button>
+    <Link to='/programs'>All Programs</Link>
+  </Button> 
+
+  </PageWrap>
+  </PageContainer>
+  <Footer/>
     </>
     )
   }
