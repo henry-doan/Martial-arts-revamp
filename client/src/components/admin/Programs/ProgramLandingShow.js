@@ -1,13 +1,13 @@
-import React from 'react';
+import React from './node_modules/react';
 import { ProgramConsumer } from '../../../providers/ProgramProvider';
-import { Link } from 'react-router-dom';
+import { Link } from './node_modules/react-router-dom';
 import ProgramLandingShows from "./ProgramLandingShows";
 import style from './programLandingShows.css';
 import {ProgramImage, ProgramHeader} from '../../styledComponents/ProgramIndexStyles';
 import {PageContainer, PageWrap, Horizontal} from '../../styledComponents/HomeStyles';
 import Footer from '../../staticpages/footer/Footer';
 import PageNavbar from '../../staticpages/pagesnavbar/PageNavbar';
-import {Grid, Image, Button}  from 'semantic-ui-react';
+import {Grid, Image, Button}  from './node_modules/semantic-ui-react';
 import {Hero2Cover} from '../../styledComponents/Home2HeroStyles';
 
 

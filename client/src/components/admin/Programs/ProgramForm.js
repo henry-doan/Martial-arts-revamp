@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import { Form, } from "semantic-ui-react";
+import React, {Component} from "./node_modules/react";
+import { Form, } from "./node_modules/semantic-ui-react";
 import { ProgramConsumer } from '../../../providers/ProgramProvider';
 import {DashItem, DashText, DashPage, DashContent} from '../../styledComponents/DashboardStyles';
 import Navbar from '../../Navbar';
