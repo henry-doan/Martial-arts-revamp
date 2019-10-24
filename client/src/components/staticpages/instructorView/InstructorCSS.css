@@ -1,25 +1,25 @@
-/* DESKTOP CODE */
-.thumb{
+
+  /* DESKTOP CODE */
+  .thumb{
   border: 0px solid #1c1c1c !important;
   width: 0px;
-    margin: auto;
-    white-space: nowrap;
-}
+  margin: auto;
+  white-space: nowrap;
+  }
 
-.carousel-status{
+  .carousel-status{
   display: none;
-}
- 
-.CarWrap{
+  }
+
+  .CarWrap{
   width: 50%;
   position: relative;
   display: flex; 
   justify-content: flex-end; 
   margin: 10px;
   overflow-wrap:break-word;
-}
-.instructorContent{
-  color:black;
+  }
+  .instructorContent{
   position: relative;
   z-index: 1;
   left:720px;
@@ -27,31 +27,28 @@
   display: block;
   margin: 2rem;
   overflow-wrap:break-word;
-}
+  }
 
-/* margin: 0 2em;
-display: inline; */
+  /* margin: 0 2em;
+  display: inline; */
 
-/* p{
+  /* p{
   width: 100%;
   overflow-wrap:break-word;
-} */
-/* desktop */
-@media (min-width: 1200px) {
+  } */
+  /* desktop */
+  @media (min-width: 1200px) {
 
-
-  .CarWrap{
+    .CarWrap{
     width: 50%;
     position: relative;
     display: flex; 
     justify-content: flex-end; 
     margin: 10px;
-    background-color: black;
     overflow-wrap:break-word;
-  }
+    }
 
-  .instructorContent{
-    color:black;
+    .instructorContent{
     position: relative;
     z-index: 1;
     left:720px;
@@ -59,115 +56,94 @@ display: inline; */
     display: block;
     margin: 2rem;
     overflow-wrap:break-word;
-  }
+    }
 
-  .root {
-    background-color: black;
-  }
-  
-  .ui.container {
-    background-color: black;
-  }
-  .carousel{
+    .carousel{
     width: 45rem;
     margin: 0em;
     padding: 1em;
     position: relative;
     margin-left: 5px;
-  }
-  
-  .slider-wrapper img{
-   width: 500px;
-   height: 500px;
-  }
-  
-  .thumbs-wrapper{
+    }
+
+    .slider-wrapper img{
+    width: 500px;
+    height: 500px;
+    }
+
+    .thumbs-wrapper{
     position: absolute; 
     bottom: 33rem;
     left: 107%;
     margin: 0 auto !important;
-  }
-  
-  
-  li.thumb img{
+    }
+
+
+    li.thumb img{
     width: 50px;
     height: 50px;
     margin: 0 auto !important;
     border-radius: 50% !important;
     border: none !important;
+    }
   }
-}
 
-/* mobile */
-@media (max-width: 1200px) {
+  /* mobile */
+  @media (max-width: 1200px) {
 
-
-  .CarWrap{
+    .CarWrap{
     width: 100%;
-  }
+    }
 
 
-  .carousel{
-      margin: 2em;
-      position: relative;
+    .carousel{
+    margin: 2em;
+    position: relative;
     }
     .instructorContent {
-      text-align: center;
-      color:white;
-      position: relative;
-      display: block;
-      margin: 1rem;
+    text-align: center;
+    position: relative;
+    display: block;
+    margin: 1rem;
     }
-    .root {
-      background-color: #282828;
-    }
-    
-    .ui container {
-      background-color: #282828;
-    }
+
     .carousel{
-      margin: 0em;
-      width:100%;
-      padding: 1em;
-      position: relative;
-      margin-left: 5px;
+    margin: 0em;
+    width:100%;
+    padding: 1em;
+    position: relative;
+    margin-left: 5px;
     }
-    
+
     .slider-wrapper img{
     /* width: 500px;
     height: 500px; */
     }
-    
+
     .thumbs-wrapper{
-      position: relative;
-      /* bottom: 33rem; */
-      left: 5rem;
-      margin: 0 auto !important;
+    position: relative;
+    /* bottom: 33rem; */
+    left: 5rem;
+    margin: 0 auto !important;
     }
-    
-    
+
+
     li.thumb img{
-      width: 50px;
-      height: 50px;
-      margin: 0 auto !important;
-      border-radius: 50% !important;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto !important;
+    border-radius: 50% !important;
     }
 
-    p {
-      /* margin: 0%;
-      max-width: 50px; */
-    }
-}
+  }
 
-.instructorContent p {
+  .instructorContent p {
   width: 45%;
-  color: white;
-}
+  }
 
-h1{
-  color: white;
-}
+  h1{
+  }
 
-Icon {
-color: white;
-}
+  Icon {
+  color: white;
+  }

@@ -2,6 +2,18 @@
     background-color: #1c1c1c;
 } */
 
+.ui.borderless.inverted.menu{
+    border-radius:0;
+}
+
+img{
+user-select: none;
+-moz-user-select: none;
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}
+
 .ui.fluid.container {
 margin-left: 0em !important;
 margin-right: 0em !important;
@@ -17,18 +29,41 @@ margin-right: 0em !important;
 }
 
 /* CALENDAR FUNCTIONS GLOBAL */
+.rbc-calendar{
+    margin: 2em;
+    position: relative;
+    /* left: 50%;
+    -ms-transform: translate( -50%);
+    transform: translate( -50%); */
+}
+
+.rbc-toolbar button:active, .rbc-toolbar button.rbc-active {
+    background-color:#353635 !important;
+}
+
+
+.rbc-toolbar button{
+color:white !important;
+}
+
+.rbc-day-bg.rbc-off-range-bg{
+    background-color: #212121;
+}
+
 .rbc-event, .rbc-event-allday{
     /* background-color:#660000 !important; */
     background:linear-gradient(45deg, #660000, #880001) !important;
 }
 
 .rbc-today{
-    background-color: #282828!important;
+    background-color: #353635!important;
 }
 
 .rbc-calendar{
-    color: black;
+    color: white;
 }
+
+/* GLOBAL BUTTONS */
 
 .PButton{
 position: absolute;
@@ -41,7 +76,11 @@ transform: translate(-50%, -50%);
 
 .ui.red.button.PButton a:hover{
     border-radius:50px !important;
-    color:orange;
+    color:red;
+}
+
+.ui.small.icon.primary.right.floated.left.labeled, .ui.small.icon.primary.right.floated.left.labeled a{
+    color:white;
 }
 
 /* NAV OVERRIDE */

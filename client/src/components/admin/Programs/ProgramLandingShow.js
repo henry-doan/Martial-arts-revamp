@@ -1,61 +1,98 @@
 import React from 'react';
 import { ProgramConsumer } from '../../../providers/ProgramProvider';
-import ProgramLandingShows from "./ProgramLandingShows";
 import { Link } from 'react-router-dom';
-import './programLandingShows.css'
+import ProgramLandingShows from "./ProgramLandingShows";
+import style from './programLandingShows.css';
+import {ProgramImage, ProgramHeader} from '../../styledComponents/ProgramIndexStyles';
+import {PageContainer, PageWrap, Horizontal} from '../../styledComponents/HomeStyles';
+import Footer from '../../staticpages/footer/Footer';
+import PageNavbar from '../../staticpages/pagesnavbar/PageNavbar';
+import {Grid, Image, Button}  from 'semantic-ui-react';
+import {Hero2Cover} from '../../styledComponents/Home2HeroStyles';
 
 
 const ProgramLandingShow = ({programs, history}) => (
     <>
+      <PageNavbar/>
+    <PageContainer>
+      <Hero2Cover />
+    
+      <PageWrap>
+
+      <Grid columns={2} doubling>
+              <Grid.Row>
+                <Grid.Column>
+                  <Image src='https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2252&q=80'/>
+                </Grid.Column>
+
+                <Grid.Column>
+                <h1>Martial Arts Programs</h1>
+            <p>The Bernales Institute of Martial Arts (BIMA) offers classes for kids and adults that provide practical self-defense skills within an energetic, fun, and supportive community atmosphere. The martial arts taught at BIMA provide a “seatbelt for life,” giving you or your child the knowledge and skills needed for effective self-protection and self-empowerment. We offer Brazilian Jiu-Jitsu, Muay Thai / Thai Boxing, Kali/Eskrima, Jeet Kune Do, Silat, Combat Submission Wrestling/Mixed Martial Arts, and Yoga classes. We strive to meet the needs of all students from inexperienced beginners to accomplished athletes.</p>
+                </Grid.Column>
+
+              </Grid.Row>
+            </Grid>
+
+            <Horizontal />
+
+            <h2>Explore Our Programs</h2>
       <ProgramConsumer>
         { value => (
           <div>
-            <img className="imgContainer" src="https://images.unsplash.com/photo-1571669972095-cfe604a052f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" width='600' height="500" />
-            <div className='descContainer'>
-            <h1>Program</h1>
-            <p>sdkjfhdsjkfjksfjk</p>
-            </div>
-            <div class="ui stackable four column grid">
-              <div class="column">
+           
+            <Grid columns={4} doubling>
+              <Grid.Row>
+                <Grid.Column>
+                <ProgramHeader> { value.featuredPro[0] && value.featuredPro[0].title } </ProgramHeader>
                 <Link to={{
-                  pathname: `/programshow/${value.featuredPro[0].id}`,
-                  state: { program: value.featuredPro[0] }
+                  pathname: `/programshow/${value.featuredPro[0] && value.featuredPro[0].id}`,
+                  state: { program:value.featuredPro[0] && value.featuredPro[0] }
                 }}>
-                  <img src={ value.featuredPro[0].image } width='150' height='150'/>
+                  <ProgramImage src={ value.featuredPro[0] && value.featuredPro[0].image } />
+                  <ProgramHeader> { value.featuredPro[0] && value.featuredPro[0].title } </ProgramHeader>
+        
                 </Link>
-              </div>
+              
+                </Grid.Column>
 
-              <div class="column">
+                <Grid.Column>
                 <Link to={{
-                  pathname: `/programshow/${value.featuredPro[1].id}`,
-                  state: {program: value.featuredPro[1]}
+                  pathname: `/programshow/${value.featuredPro[1] &&  value.featuredPro[1].id}`,
+                  state: {program: value.featuredPro[1] &&  value.featuredPro[1]}
                 }}>
-                <img src={ value.featuredPro[1].image } width='150' height='150'/>
+                <ProgramImage src={ value.featuredPro[1] &&  value.featuredPro[1].image } />
+                <ProgramHeader> { value.featuredPro[1] &&  value.featuredPro[1].title } </ProgramHeader>
                 </Link>
-              </div>
+                </Grid.Column>
 
-              <div class="column">
+                <Grid.Column>
                 <Link to={{
-                  pathname: `/programshow/${value.featuredPro[2].id}`,
-                  state: { program: value.featuredPro[2]}
+                  pathname: `/programshow/${value.featuredPro[2] &&   value.featuredPro[2].id}`,
+                  state: {program: value.featuredPro[2] &&   value.featuredPro[2]}
                 }}>
-                <img src={ value.featuredPro[2].image } width='150' height='150'/>
+                <ProgramImage src={ value.featuredPro[2] &&   value.featuredPro[2].image } />
+                <ProgramHeader> { value.featuredPro[2] &&   value.featuredPro[2].title } </ProgramHeader>
                 </Link>
-              </div>
+                </Grid.Column>
 
-
-              <div class="column">
+                <Grid.Column>
                 <Link to={{
-                  pathname: `/programshow/${value.featuredPro[3].id}`,
-                  state: {program: value.featuredPro[3]}
+                  pathname: `/programshow/${value.featuredPro[3] &&  value.featuredPro[3].id}`,
+                  state: {program: value.featuredPro[3] &&  value.featuredPro[3]}
                 }}>
-                <img src={ value.featuredPro[3].image } width='150' height='150'/>
+                <ProgramImage src={ value.featuredPro[3] &&  value.featuredPro[3].image } />
+                <ProgramHeader> { value.featuredPro[3] &&  value.featuredPro[3].title } </ProgramHeader>
                 </Link>
-              </div>
-            </div>
+                </Grid.Column> 
+
+              </Grid.Row>
+            </Grid>
           </div>
       )}
       </ProgramConsumer>
+      </PageWrap>
+    </PageContainer>
+      <Footer/>
     </>
 )
 

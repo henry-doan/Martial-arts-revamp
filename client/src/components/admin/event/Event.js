@@ -5,6 +5,7 @@ import {EventContext} from '../../../providers/EventProvider';
 import Moment from '../../../components/calendar/Moment'
 import EventModal from './EventModal';
 import Navbar from '../../Navbar';
+import {DashItem, DashText, DashPage, DashContent} from '../../styledComponents/DashboardStyles';
 
 
 
@@ -24,13 +25,16 @@ const Event = () => {
         {value.getEvent()}
      },[]);
 
+     console.log(value.events)
      useEffect(() => {
-        console.log(value.events)
      }, [value.events])
 
    return (
         <>
+        <DashPage>
         <Navbar/>
+           <DashContent>
+
                 <EventModal open={modalEvent} setModalEvent={setModalEvent} {...modalShowEvent} />
                 <Moment
                 events={formatEvent()}
@@ -51,8 +55,10 @@ const Event = () => {
                 size='small'
             >
             <Icon name='calendar alternate outline' />
-            <Link to='/eventform' color='white'>Add Event</Link>
+            <Link to='/admin/eventform' color='white'>Add Event</Link>
             </Button>
+           </DashContent>
+        </DashPage>
 
                 </>
    )

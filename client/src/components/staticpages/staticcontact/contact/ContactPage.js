@@ -1,20 +1,52 @@
 import React, {Component} from 'react';
 import bima from '../../assets/images/bima.jpg'
-import { Grid, Image, GridColumn } from 'semantic-ui-react';
+import { Grid, Image, Card, Icon, Modal } from 'semantic-ui-react';
+import PageNavbar from '../../pagesnavbar/PageNavbar';
+import Footer from '../../footer/Footer';
+import {ModalContact} from '../../../styledComponents/ContactStyles';
+import {BimaCover, Hero2CoverH2} from '../../../styledComponents/Home2HeroStyles';
+import ConnectedContactForm from '../../../admin/contact/ContactForm';
+import {HomeContainer, PageContainer, PageWrap, Horizontal} from '../../../styledComponents/HomeStyles';
+
 // import Iframe from './Iframe';
 class ContactPage extends Component {
   render() {
     const {ContactPage} = this.props
  
     return (
-  <Grid columns={3}>
-    <Grid.Row>
+      <>
+      <PageNavbar />
+      <PageContainer>
+
+      <Modal trigger={
+        <ModalContact>
+          <Icon name='bolt'/>
+        </ModalContact>
+      } closeIcon>
+<Modal.Content>
+<h1>Write us!</h1>
+<Card fluid style={{padding: '2em'}}> 
+<ConnectedContactForm />
+</Card>
+</Modal.Content>
+</Modal>
+
+
+      <BimaCover>
+          <Hero2CoverH2>Contact Us</Hero2CoverH2>
+        </BimaCover>
+<PageWrap>
+
+  <Grid columns={3} doubling>
+    <Grid.Row >
 
 <Grid.Column>
         <h1>Our Address:</h1>
+        <p>
 2257 South State Street
 <br />
 Salt Lake City, Utah  84115
+        </p>
 </Grid.Column>
 
 <Grid.Column>
@@ -22,26 +54,31 @@ Salt Lake City, Utah  84115
 (801) 463-1727
 <br />
 <br />
-      Feel free to call us anytime.  Please leave a message if you reach our voicemail.  We value your call and will get back to you promptly.
+<p>
+Feel free to call us anytime.  Please leave a message if you reach our voicemail. 
+We value your call and will get back to you promptly.
+</p>
 <br />
 <br />
 </Grid.Column>
 
-<Grid.Column>
-      <h1>Email:</h1>
+<Grid.Column >
+<h1>Email:</h1>
 Email us for info @ bernalesinstitute.com
 <br />
 <br />
 <Image src={bima} />
-<section>
-  
-
-</section>
 </Grid.Column>
+</Grid.Row>
+</Grid>
 
+<Horizontal />
+
+<Grid columns={2} doubling>
+<Grid.Row>
 <Grid.Column>
       <h1>Hours:</h1>
-
+<p>
 Monday:
 <br />
 11 a.m. to 1 p.m.
@@ -50,7 +87,7 @@ Monday:
 <br />
 <br />
 
-    Tuesday:
+Tuesday:
 <br />
 
 6:30 a.m. to 8:30 a.m.
@@ -103,17 +140,19 @@ Sunday:
 
 CLOSED
 <br />
-<br />
+</p>
+
 </Grid.Column>
 
 <Grid.Column>
-<h1>ANNUAL STUDIO CLOSURES:</h1>
+<h1>Annual Studio Closures:</h1>
+<p>
+BIMA is closed on federal and Utah holidays, 
+except when schools are open, 
+and from December 24 through January 1.
+</p>
 <br />
-
-BIMA is closed on federal and Utah holidays, except when schools are open, and from December 24 through January 1.
-<br />
-<br />
-
+<p>
 January:
 
 January 1 (New Year's Day)
@@ -162,11 +201,15 @@ December
 
 December 24 through January 1 (reopening on January 2)
 <br />
-<br />
+</p>
 </Grid.Column>
 
-    </Grid.Row>
+  </Grid.Row>
   </Grid>
+</PageWrap>
+  </PageContainer>
+  <Footer />
+  </>
 )
 
     }

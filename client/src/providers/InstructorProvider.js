@@ -7,17 +7,15 @@ export const InstructorConsumer = InstructorContext.Consumer;
 class InstructorProvider extends Component {
     state = { instructors: [] }
 
-    getInstructor = () => {
-        axios.get('/api/instructors')
-        .then( res => {
-            this.setState({ instructors: res.data })
-        })
-        .catch( err => {
-            console.log(err)
-        })
-    }
-
-
+componentDidMount() {
+    axios.get('/api/instructors')
+    .then( res => {
+        this.setState({ instructors: res.data })
+    })
+    .catch( err => {
+        console.log(err)
+    })
+}
 
 addInstructor = (instructor) => {
     axios.post('/api/instructors', {instructor})
@@ -49,7 +47,11 @@ updateInstructor = (id, instructor) => {
       axios.delete(`/api/instructors/${id}`)
       .then( res => {
           const { instructors } = this.state
-          this.setState({ instructor: instructors.filter( i => i.id !== id) }) 
+          this.setState({ instructor: instructors.filter( i => i.id !== id) })
+          this.componentDidMount();
+      })
+      .catch (err => {
+        console.log(err)
       })
   }
 

@@ -11,6 +11,7 @@ import About from './components/admin/about/About';
 import AboutForm from './components/admin/about/AboutForm';
 import Instructor from './components/admin/instructor/Instructor';
 import InstructorForm from './components/admin/instructor/InstructorForm';
+import InstructorIndex from './components/staticpages/instructorView/InstructorIndex';
 import Dashboard from './components/admin/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import ProgramIndex from './components/admin/programs/ProgramIndex';
@@ -53,16 +54,14 @@ const App = () => (
 
         {/* STATIC PAGES */}
 
-
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={HomeAboutPage} />
-
-        <Route exact path="/instructor" component={Instructor} />
+        <Route exact path="/instructors" component={InstructorIndex} />
         <Route exact path="/instructorform" component={InstructorForm} />
-        <Route exact path="/programLandingShow" component={ProgramLandingShow} />
+        <Route exact path="/programs" component={ProgramLandingShow} />
+        <Route exact path="/programshow" component={ProgramLandingShow} />
         <Route exact path="/programshow/:id" component={ProgramLandingShows} />
-        
-        <Route exact path="/contactpage" component={ContactPage} />
+        <Route exact path="/contact" component={ContactPage} />
 
         <Route component={NoMatch} />
       </Switch>

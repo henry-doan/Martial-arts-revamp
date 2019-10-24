@@ -29,6 +29,54 @@ class Navbar extends React.Component {
     />
     </Link>
 
+    <Link to='/admin/event'>
+    <Menu.Item
+    id='events'
+    name='events'
+    active={location.pathname === '/admin/event'}
+    />
+    </Link>
+
+    <Link to='/admin/programindex'>
+    <Menu.Item
+    id='programs'
+    name='programs'
+    active={location.pathname === '/admin/programindex'}
+    />
+    </Link>
+
+    <Link to='/admin/instructor'>
+    <Menu.Item
+    id='instructors'
+    name='instructors'
+    active={location.pathname === '/admin/instructor'}
+    />
+    </Link>
+
+    <Link to='/admin/about'>
+    <Menu.Item
+    id='about'
+    name='about'
+    active={location.pathname === '/admin/about'}
+    />
+    </Link>
+
+    <Link to='/admin/contacts'>
+    <Menu.Item
+    id='contact'
+    name='contact'
+    active={location.pathname === '/admin/contacts'}
+    />
+    </Link>
+
+    {/* <Link to='/admin/walkin'>
+    <Menu.Item
+    id='walkin'
+    name='walkin'
+    active={location.pathname === '/admin/walkin'}
+    />
+    </Link> */}
+
   </Menu.Menu>
 
     <Menu.Menu position='right'>
