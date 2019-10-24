@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :walkincontacts
   end
 
+  get '*other', to: 'static#index'
 end
