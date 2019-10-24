@@ -10,26 +10,6 @@ const Dashboard = () => (
        <Navbar />
 <DashContent>
     <h1>Welcom Admin!</h1>
-        {/* <Menu inverted style={{background:'', a:''}}>
-            <Menu.Item>
-                <Link to='/admin/event'>Events</Link>
-            </Menu.Item>
-            <Menu.Item>
-                <Link to='/admin/programindex'>Programs</Link>
-            </Menu.Item>
-            <Menu.Item>
-                <Link to='/admin/instructor'>Instructors</Link>
-            </Menu.Item>
-            <Menu.Item>
-                <Link to='/admin/about'>About</Link>
-            </Menu.Item>
-            <Menu.Item>
-                <Link to='/admin/contacts'>Contact</Link>
-            </Menu.Item>
-            <Menu.Item>
-                <Link to='/admin/walkin'>Walkin</Link>
-            </Menu.Item>
-        </Menu> */}
 
         <Grid columns={3} doubling>
             <Grid.Row>
