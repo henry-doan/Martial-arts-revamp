@@ -9,13 +9,6 @@ class ProgramForm extends React.Component {
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value, });
 
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const program = { ...this.state, };
-  //   this.props.addProgram(program);
-  //   // this.props.updateProgram({program});
-  // }
-
   componentDidMount() {
      if (this.props.location.state) {
        const { title, description, image, featured_boolean, gallery } = this.props.location.state
@@ -66,14 +59,6 @@ class ProgramForm extends React.Component {
           onChange={this.handleChange}
           type="text"
         />
-
-        {/* <Form.Input
-          label="gallery"
-          name="gallery"
-          value={gallery}
-          onChange={this.handleChange}
-          type="text"
-        /> */}
 
         <Form.Input
           label="featured_boolean"
