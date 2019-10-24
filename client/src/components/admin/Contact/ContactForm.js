@@ -28,10 +28,6 @@ class ContactForm extends Component {
     } else {
       this.props.addContact(this.state)
       window.location.href = '/contact'
-      // onActionClick();
-      // onClose();
-      // this.props.history.push('/');
-      // alert('Thanks!')
     }
     this.setState({ name: '', phone: '', email:'', interest: '',
     message: '',})
