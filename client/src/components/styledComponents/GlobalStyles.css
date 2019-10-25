@@ -1,4 +1,6 @@
-
+body{
+    height: 100% !important;
+}
 .ui.borderless.inverted.menu{
     border-radius:0;
 }
@@ -34,6 +36,10 @@ margin-right: 0em !important;
 
 .FooterLink a:hover{
     color:#660000;
+}
+
+.quill, .ql-editor{
+    background-color: white;
 }
 
 /* CALENDAR FUNCTIONS GLOBAL */

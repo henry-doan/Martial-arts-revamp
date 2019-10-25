@@ -2,20 +2,18 @@ import React, { Component } from 'react';
 import { Form } from 'semantic-ui-react';
 import ReactQuill, { Quill, Mixin, Toolbar } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-// DRAFT JS
-// import ReactDOM from 'react-dom';
-// import {Editor, EditorState} from 'draft-js';
+
 import {AboutConsumer} from '../../../providers/AboutProvider';
 
 class AboutForm extends Component {
   state = { title: '', content: '',}
 
-  componentDidMount() {
-    if (this.props.id) {
-        this.setState({ title: this.props.title, content: this.props.content 
-        })
-    }
+componentDidMount() {
+  if (this.props.id) {
+      this.setState({ title: this.props.title, content: this.props.content 
+      })
   }
+}
 
 handleContentChange = (value) => {
     this.setState({ content: value })
@@ -52,7 +50,6 @@ handleSubmit = (e) => {
           onChange={this.handleChange}
         />
 
-
         <ReactQuill 
         theme="snow"
         required
@@ -65,11 +62,8 @@ handleSubmit = (e) => {
         value={content}
         onChange={this.handleContentChange}
         style={{height:'500px', marginBottom:'4em'}}>
-      
-
         </ReactQuill>  
          
-
         <Form.Button color='green'>Save</Form.Button>
         
       </Form>

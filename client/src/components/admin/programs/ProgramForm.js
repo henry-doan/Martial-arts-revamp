@@ -3,8 +3,10 @@ import { Form, } from "semantic-ui-react";
 import { ProgramConsumer } from '../../../providers/ProgramProvider';
 import {DashItem, DashText, DashPage, DashContent} from '../../styledComponents/DashboardStyles';
 import Navbar from '../../Navbar';
+import ReactQuill, { Quill, Mixin, Toolbar } from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
-class ProgramForm extends React.Component {
+class ProgramForm extends Component {
   state = { title: "", description: "", image:"", featured_boolean: false, gallery:"" };
 
   handleChange = (e, { name, value }) => this.setState({ [name]: value, });
@@ -16,18 +18,22 @@ class ProgramForm extends React.Component {
      }
    }
 
- handleSubmit = (e) => {
-   const { title,description, image, gallery, featured_boolean, history } = this.props
-   e.preventDefault();
-   if (this.props.location.state) {
-     const { id } = this.props.location.state
-     this.props.updateProgram(id, { ...this.state }, history)
-   } else {
-     this.props.addProgram(this.state)
-     history.push("/admin/programindex")
-   }
-   this.setState({ title: "", description: "", image:"", gallery:"", featured_boolean:"" });
- };
+  handleContentChange = (value) => {
+    this.setState({ description: value })
+  }
+
+  handleSubmit = (e) => {
+    const { title,description, image, gallery, featured_boolean, history } = this.props
+    e.preventDefault();
+    if (this.props.location.state) {
+      const { id } = this.props.location.state
+      this.props.updateProgram(id, { ...this.state }, history)
+    } else {
+      this.props.addProgram(this.state)
+      history.push("/admin/programindex")
+    }
+    this.setState({ title: "", description: "", image:"", gallery:"", featured_boolean:"" });
+  };
 
   render() {
     const { title, description, image, gallery, featured_boolean } = this.state;
@@ -36,7 +42,7 @@ class ProgramForm extends React.Component {
       <DashPage>
         <Navbar />
         <DashContent>
-<h1>Add Program</h1>
+      <h1>Add Program</h1>
       <Form onSubmit={this.handleSubmit}>
         <Form.Input
           label="Title"
@@ -45,13 +51,21 @@ class ProgramForm extends React.Component {
           value={title}
           onChange={this.handleChange}
         />
-        <Form.TextArea
-          label="Description"
-          name="description"
-          value={description}
-          onChange={this.handleChange}
-          type="text"
-        />
+
+        <ReactQuill 
+        theme="snow"
+        required
+        key="toolbar"
+        ref="toolbar"
+        placeholder='Content'
+        type='TextArea'
+        label='description'
+        name='description'
+        value={description}
+        onChange={this.handleContentChange}
+        style={{height:'300px', marginBottom:'4em'}}>
+        </ReactQuill> 
+
         <Form.Input
           label="Image Link"
           name="image"

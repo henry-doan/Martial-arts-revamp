@@ -16,6 +16,7 @@ class ProgramLandingShows extends Component {
   <PageNavbar/>
   <PageContainer>
   <PageWrap>
+  <h1>{ title }</h1>
   <Grid columns={2} doubling>
   <Grid.Row>
   <Grid.Column>
@@ -23,8 +24,7 @@ class ProgramLandingShows extends Component {
   </Grid.Column>
 
   <Grid.Column>
-  <p>{ description }</p>
-  <h1>{ title }</h1>
+  <div dangerouslySetInnerHTML={{__html: description}} />
   </Grid.Column>
 
   </Grid.Row>

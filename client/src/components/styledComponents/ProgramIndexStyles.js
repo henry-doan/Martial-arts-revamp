@@ -59,18 +59,26 @@ transform: translate(-50%, -50%);
   border-radius:50px !important;
   color:orange !important;
   }
-
 `;
 
 export const ProgramImage = styled.img`
-  position: relative;
-  width:100%;
-  margin: 1px;
-  border-radius: 5px;
+position: relative;
+width:100%;
+margin: 1px;
+border-radius: 5px;
 opacity: 0.5;
   &:hover{
       opacity: 1;
   }
+`;
+
+export const ProgramImageSec = styled.section`
+position: relative;
+background-position: center;
+background-repeat: no-repeat !important;
+background-size: cover !important;
+min-height: 15em;
+min-width: 15em;
 `;
 
 export const ProgramHeader = styled.h3`
@@ -78,11 +86,11 @@ text-align:center;
 text-transform:uppercase;
 z-index:5;
 color:white;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-shadow: 0px 0px 8px #000;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 0px 8px #000;
 `;

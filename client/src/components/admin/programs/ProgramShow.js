@@ -8,10 +8,8 @@ class ProgramShow extends Component {
     return (
     <>
     <Table.Row>
-    <Table.Cell><h1>{id}</h1></Table.Cell>
     <Table.Cell>{title}</Table.Cell>
-    <Table.Cell>{description}</Table.Cell>
-    <Table.Cell>
+    <Table.Cell textAlign='right'>
     <Button >
       <Link to={{
       pathname: "/admin/programForm",
