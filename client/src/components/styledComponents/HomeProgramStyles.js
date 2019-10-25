@@ -45,6 +45,7 @@ width: 100%;
 `;
 
 export const HeroProgramImageSec = styled.section`
+border-radius:20px;
 position: relative;
 background-position: center;
 background-repeat: no-repeat !important;

@@ -11,13 +11,11 @@ const ProgramIndex = ({programs, updateProgram, deleteProgram, addProgram, histo
 <DashPage>
 <Navbar />
 <DashContent>
-<Table>
+<Table padded='very'>
 	<Table.Header>
 	<Table.Row>
-			<Table.HeaderCell>ID</Table.HeaderCell>
 			<Table.HeaderCell>Title</Table.HeaderCell>
-			<Table.HeaderCell>Description</Table.HeaderCell>
-			<Table.HeaderCell>Edit/Delete</Table.HeaderCell>
+			<Table.HeaderCell textAlign='right'>Edit/Delete</Table.HeaderCell>
 	</Table.Row>
 	</Table.Header>
 
@@ -25,15 +23,17 @@ const ProgramIndex = ({programs, updateProgram, deleteProgram, addProgram, histo
   <ProgramConsumer>
 
         { value => (
-			<>
-				{ value.programs.map(program =>
-				<ProgramShow
-				{...program}
-				updateProgram={value.updateProgram}
-				deleteProgram={value.deleteProgram}
-				/>
-				)}
-			</>
+            <>
+            { value.programs.map(program =>
+                <ProgramShow
+                  {...program}
+                  updateProgram={value.updateProgram}
+                  deleteProgram={value.deleteProgram}
+                  />
+
+              )}
+
+              </>
         )}
     </ProgramConsumer>
     </Table.Body>

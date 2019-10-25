@@ -3,6 +3,8 @@ import {InstructorConsumer} from '../../../providers/InstructorProvider';
 import { Form } from 'semantic-ui-react';
 import ReactQuill, { Quill, Mixin, Toolbar } from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import Navbar from '../../Navbar';
+import {DashItem, DashText, DashPage, DashContent} from '../../styledComponents/DashboardStyles';
 
 class InstructorForm extends Component {
   state = { first_name: '', last_name: '', specialty:'', years: '',
@@ -18,6 +20,10 @@ class InstructorForm extends Component {
       })
     }
   }
+
+  handleContentChange = (value) => {
+    this.setState({ bio: value })
+}
 
   handleChange = (e) => {
     const { name, value } = e.target
@@ -42,7 +48,11 @@ class InstructorForm extends Component {
     const { first_name, last_name, specialty, years, image, experience, 
       sm_facebook, sm_linkedin, sm_instagram, sm_youtube, bio, sm_twitter} = this.state 
     return (
-<section style={{padding: '2em'}}>
+      <>
+<DashPage>
+<Navbar />
+<DashContent>
+
       <Form onSubmit={this.handleSubmit}>
 
         <Form.Input 
@@ -81,14 +91,19 @@ class InstructorForm extends Component {
           onChange={this.handleChange}
         />
 
-        <Form.TextArea
-          required
-          placeholder='Instructor Story'
-          label='Biography'
-          name='bio'
-          value={bio}
-          onChange={this.handleChange}
-        />
+        <ReactQuill 
+        theme="snow"
+        required
+        key="toolbar"
+        ref="toolbar"
+        placeholder='Biography'
+        type='TextArea'
+        label='bio'
+        name='bio'
+        value={bio}
+        onChange={this.handleContentChange}
+        style={{height:'300px', marginBottom:'4em'}}>
+        </ReactQuill> 
 
         <Form.Input 
 
@@ -115,19 +130,12 @@ class InstructorForm extends Component {
           onChange={this.handleChange}
         />
 
-        {/* <Form.Input 
-          required
-          placeholder='Youtube Link'
-          label='sm_youtube'
-          name='sm_youtube'
-          value={sm_youtube}
-          onChange={this.handleChange}
-        /> */}
-
         <Form.Button color='red'>Save</Form.Button>
         
       </Form>
-</section>
+</DashContent>
+</DashPage>
+	</>
     )
   }
 }

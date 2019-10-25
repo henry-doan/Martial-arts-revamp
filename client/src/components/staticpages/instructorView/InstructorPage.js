@@ -17,7 +17,7 @@ return (
     <h1>{first_name} {last_name} </h1>
     <h2>{specialty} </h2>
     <p>
-    {bio}
+    <div dangerouslySetInnerHTML={{__html: bio}} />
     </p>
     <a href={sm_facebook} target="_blank">
     <Icon name='facebook' size='large' />
